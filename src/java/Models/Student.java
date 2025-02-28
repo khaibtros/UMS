@@ -9,5 +9,5 @@ package Models;
  * @author DELL
  */
 public class Student {
-        
+        private int id;
 }
