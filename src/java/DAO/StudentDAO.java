@@ -1,6 +1,6 @@
 package DAO;
 
-import model.Student;
+import Models.Student;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
