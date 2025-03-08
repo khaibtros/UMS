@@ -8,6 +8,18 @@
         <servlet-name>ContactUsController</servlet-name>
         <servlet-class>controller.ContactUsController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListStudentsServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListStudentsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateStudentsServlet</servlet-name>
+        <servlet-class>Controllers.Student.UpdateStudentsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListInstructorsServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListInstructorsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>ContactUsController</servlet-name>
         <url-pattern>/contactus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListStudentsServlet</servlet-name>
+        <url-pattern>/students</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateStudentsServlet</servlet-name>
+        <url-pattern>/students/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListInstructorsServlet</servlet-name>
+        <url-pattern>/instructors</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

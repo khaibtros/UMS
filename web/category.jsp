@@ -35,7 +35,7 @@
             <!--End of header-->
 
             <!--Admin user start-->
-            <c:if test="${users.roleId == 1}">
+            <%--<c:if test="${users.roleId == 1}">--%>
                 <div class="breadcrumb-bar">
                     <div class="container-fluid">
                         <div class="row align-items-center">
@@ -166,13 +166,13 @@
                         </div>
                     </div>
                 </div>
-            </c:if>
+            <%--</c:if>--%>
             <!--Admin user end-->
 
             <!--not admin start-->
-            <c:if test="${users.roleId != 1 || empty users}">
-                <%@include file="accessdenied.jsp" %>
-            </c:if>
+            <%--<c:if test="${users.roleId != 1 || empty users}">--%>
+                <%--<%@include file="accessdenied.jsp" %>--%>
+            <%--</c:if>--%>
             <!--not admin end-->
 
             <!-- end of Pre footer -->

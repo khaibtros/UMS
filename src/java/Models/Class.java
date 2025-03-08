@@ -4,13 +4,15 @@ public class Class {
     private int classID;
     private String name;
     private int majorID;
+    private int semesterID;
     private int capacity;
     private String status;
 
-    public Class(int classID, String name, int majorID, int capacity, String status) {
+    public Class(int classID, String name, int majorID, int semesterID, int capacity, String status) {
         this.classID = classID;
         this.name = name;
         this.majorID = majorID;
+        this.semesterID = semesterID;
         this.capacity = capacity;
         this.status = status;
     }
@@ -38,6 +40,14 @@ public class Class {
     public void setMajorID(int majorID) {
         this.majorID = majorID;
     }
+
+        public int getSemesterID() {
+                return semesterID;
+        }
+
+        public void setSemesterID(int semesterID) {
+                this.semesterID = semesterID;
+        }
 
     public int getCapacity() {
         return capacity;

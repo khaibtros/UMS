@@ -28,10 +28,11 @@ public class ClassDAO {
                 int classID = rs.getInt("ClassID");
                 String name = rs.getString("Name");
                 int majorID = rs.getInt("MajorID");
+                int semesterID = rs.getInt("SemesterID");
                 int capacity = rs.getInt("Capacity");
                 String status = rs.getString("Status");
 
-                Class cl = new Class(classID, name, majorID, capacity, status);
+                Class cl = new Class(classID, name, majorID, semesterID, capacity, status);
                 classList.add(cl);
             }
             conn.close();

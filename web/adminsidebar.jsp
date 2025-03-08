@@ -16,9 +16,9 @@
                             <span><i class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="AdminNotificationController"><i class="fas fa-bell"></i>Admin Notification
                             <span><i class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="listmentor"><i class="fas fa-list-alt"></i>List Mentors <span><i
+                    <li><a href="students"><i class="fas fa-list-alt"></i>List Students <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="listmentee"><i class="fas fa-list-alt"></i>List Mentees<span><i class="fas fa-chevron-right"></i></span></a></li>
+                    <li><a href="instructors"><i class="fas fa-list-alt"></i>List Instructors<span><i class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="listbooking"><i class="fas fa-list-alt"></i>List Booking <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="listcategory"><i class="fas fa-list-alt"></i>List Categories <span><i

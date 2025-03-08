@@ -1,154 +1,165 @@
 package Models;
 
-
 import java.util.Date;
+import java.util.List;
 
 public class Instructor {
-    private int instructorID; // Primary key
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phone;
-    private String address;
-    private Date dob; // Use java.sql.Date for compatibility with database
-    private String gender;
-    private double salary; // Decimal(10,2)
-    private Date hireDate;
-    private Date endDate;
-    private String status;
 
-    // Constructor
-    public Instructor(int instructorID, String firstName, String lastName, String email, String phone,
-                      String address, Date dob, String gender, double salary, Date hireDate, Date endDate, String status) {
-        this.instructorID = instructorID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
-        this.dob = dob;
-        this.gender = gender;
-        this.salary = salary;
-        this.hireDate = hireDate;
-        this.endDate = endDate;
-        this.status = status;
-    }
+        private int instructorID; // Primary key
+        private String firstName;
+        private String lastName;
+        private String email;
+        private String phone;
+        private String address;
+        private Date dob; // Use java.sql.Date for compatibility with database
+        private String gender;
+        private double salary; // Decimal(10,2)
+        private Date hireDate;
+        private Date endDate;
+        private String status;
+        private List<Course> courses;
 
-    // Default constructor
-    public Instructor() {}
+        // Constructor
+        public Instructor(int instructorID, String firstName, String lastName, String email, String phone,
+                String address, Date dob, String gender, double salary, Date hireDate, Date endDate, String status) {
+                this.instructorID = instructorID;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.email = email;
+                this.phone = phone;
+                this.address = address;
+                this.dob = dob;
+                this.gender = gender;
+                this.salary = salary;
+                this.hireDate = hireDate;
+                this.endDate = endDate;
+                this.status = status;
+        }
 
-    // Getters and Setters
-    public int getInstructorID() {
-        return instructorID;
-    }
+        // Default constructor
+        public Instructor() {
+        }
 
-    public void setInstructorID(int instructorID) {
-        this.instructorID = instructorID;
-    }
+        public void setCourses(List<Course> courses) {
+                this.courses = courses;
+        }
 
-    public String getFirstName() {
-        return firstName;
-    }
+        public List<Course> getCourses() {
+                return courses;
+        }
+        // Getters and Setters
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+        public int getInstructorID() {
+                return instructorID;
+        }
 
-    public String getLastName() {
-        return lastName;
-    }
+        public void setInstructorID(int instructorID) {
+                this.instructorID = instructorID;
+        }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+        public String getFirstName() {
+                return firstName;
+        }
 
-    public String getEmail() {
-        return email;
-    }
+        public void setFirstName(String firstName) {
+                this.firstName = firstName;
+        }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+        public String getLastName() {
+                return lastName;
+        }
 
-    public String getPhone() {
-        return phone;
-    }
+        public void setLastName(String lastName) {
+                this.lastName = lastName;
+        }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+        public String getEmail() {
+                return email;
+        }
 
-    public String getAddress() {
-        return address;
-    }
+        public void setEmail(String email) {
+                this.email = email;
+        }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+        public String getPhone() {
+                return phone;
+        }
 
-    public Date getDob() {
-        return dob;
-    }
+        public void setPhone(String phone) {
+                this.phone = phone;
+        }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
+        public String getAddress() {
+                return address;
+        }
 
-    public String getGender() {
-        return gender;
-    }
+        public void setAddress(String address) {
+                this.address = address;
+        }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+        public Date getDob() {
+                return dob;
+        }
 
-    public double getSalary() {
-        return salary;
-    }
+        public void setDob(Date dob) {
+                this.dob = dob;
+        }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
+        public String getGender() {
+                return gender;
+        }
 
-    public Date getHireDate() {
-        return hireDate;
-    }
+        public void setGender(String gender) {
+                this.gender = gender;
+        }
 
-    public void setHireDate(Date hireDate) {
-        this.hireDate = hireDate;
-    }
+        public double getSalary() {
+                return salary;
+        }
 
-    public Date getEndDate() {
-        return endDate;
-    }
+        public void setSalary(double salary) {
+                this.salary = salary;
+        }
 
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
+        public Date getHireDate() {
+                return hireDate;
+        }
 
-    public String getStatus() {
-        return status;
-    }
+        public void setHireDate(Date hireDate) {
+                this.hireDate = hireDate;
+        }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+        public Date getEndDate() {
+                return endDate;
+        }
 
-    @Override
-    public String toString() {
-        return "Instructor{" +
-                "instructorID=" + instructorID +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
-                ", dob=" + dob +
-                ", gender='" + gender + '\'' +
-                ", salary=" + salary +
-                ", hireDate=" + hireDate +
-                ", endDate=" + endDate +
-                ", status='" + status + '\'' +
-                '}';
-    }
+        public void setEndDate(Date endDate) {
+                this.endDate = endDate;
+        }
+
+        public String getStatus() {
+                return status;
+        }
+
+        public void setStatus(String status) {
+                this.status = status;
+        }
+
+        @Override
+        public String toString() {
+                return "Instructor{"
+                        + "instructorID=" + instructorID
+                        + ", firstName='" + firstName + '\''
+                        + ", lastName='" + lastName + '\''
+                        + ", email='" + email + '\''
+                        + ", phone='" + phone + '\''
+                        + ", address='" + address + '\''
+                        + ", dob=" + dob
+                        + ", gender='" + gender + '\''
+                        + ", salary=" + salary
+                        + ", hireDate=" + hireDate
+                        + ", endDate=" + endDate
+                        + ", status='" + status + '\''
+                        + '}';
+        }
 }

@@ -1,6 +1,6 @@
 package DAO;
 
-import Models.Tuition;
+import Models.TuitionFee;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,8 +15,8 @@ public class TuitionDAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public List<Tuition> getAllTuitionFees() {
-        List<Tuition> lstTuitionFee = new ArrayList<>();
+    public List<TuitionFee> getAllTuitionFees() {
+        List<TuitionFee> lstTuitionFee = new ArrayList<>();
         DBContext db = new DBContext();
         try {
             conn = db.getConnection();
@@ -31,7 +31,7 @@ public class TuitionDAO {
                 String paymentMethod = rs.getString("PaymentMethod");
                 String paymentStatus = rs.getString("PaymentStatus");
 
-                Tuition tuitionFee = new Tuition(id, studentId, amount, dueDate, paymentMethod, paymentStatus);
+                TuitionFee tuitionFee = new TuitionFee(id, studentId, amount, dueDate, paymentMethod, paymentStatus);
                 lstTuitionFee.add(tuitionFee);
             }
             conn.close();

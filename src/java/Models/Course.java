@@ -1,87 +1,91 @@
 package Models;
 
-import java.math.BigDecimal;
-
 public class Course {
-    private int courseId;          // CourseID là kiểu int
+    private int courseID;
     private String name;
     private String code;
     private String description;
-    private int semesterId;
-    private BigDecimal feeAmount;
+    private int majorID;
+    private int semesterID;
+    private double feeAmount;
 
-    // Constructor
-    public Course(int courseId, String name, String code, String description, int semesterId, BigDecimal feeAmount) {
-        this.courseId = courseId;
+    public Course(int courseID, String name, String code, String description, int majorID, int semesterID, double feeAmount) {
+        this.courseID = courseID;
         this.name = name;
         this.code = code;
         this.description = description;
-        this.semesterId = semesterId;
+        this.majorID = majorID;
+        this.semesterID = semesterID;
         this.feeAmount = feeAmount;
     }
 
-    // Default constructor
-    public Course() {
-    }
+        public int getCourseID() {
+                return courseID;
+        }
 
-    // Getters and Setters
-    public int getCourseId() {
-        return courseId;
-    }
+        public void setCourseID(int courseID) {
+                this.courseID = courseID;
+        }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }
+        public String getName() {
+                return name;
+        }
 
-    public String getName() {
-        return name;
-    }
+        public void setName(String name) {
+                this.name = name;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public String getCode() {
+                return code;
+        }
 
-    public String getCode() {
-        return code;
-    }
+        public void setCode(String code) {
+                this.code = code;
+        }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+        public String getDescription() {
+                return description;
+        }
 
-    public String getDescription() {
-        return description;
-    }
+        public void setDescription(String description) {
+                this.description = description;
+        }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+        public int getMajorID() {
+                return majorID;
+        }
 
-    public int getSemesterId() {
-        return semesterId;
-    }
+        public void setMajorID(int majorID) {
+                this.majorID = majorID;
+        }
 
-    public void setSemesterId(int semesterId) {
-        this.semesterId = semesterId;
-    }
+        public int getSemesterID() {
+                return semesterID;
+        }
 
-    public BigDecimal getFeeAmount() {
-        return feeAmount;
-    }
+        public void setSemesterID(int semesterID) {
+                this.semesterID = semesterID;
+        }
 
-    public void setFeeAmount(BigDecimal feeAmount) {
-        this.feeAmount = feeAmount;
-    }
+        public double getFeeAmount() {
+                return feeAmount;
+        }
 
-    // toString method
+        public void setFeeAmount(double feeAmount) {
+                this.feeAmount = feeAmount;
+        }
+    
+    
+    
     @Override
     public String toString() {
         return "Course{" +
-                "courseId=" + courseId +
+                "courseID=" + courseID +
                 ", name='" + name + '\'' +
                 ", code='" + code + '\'' +
                 ", description='" + description + '\'' +
-                ", semesterId=" + semesterId +
+                ", majorID=" + majorID +
+                ", semesterID=" + semesterID +
                 ", feeAmount=" + feeAmount +
                 '}';
     }

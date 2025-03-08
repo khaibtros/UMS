@@ -4,8 +4,9 @@
  */
 package Controllers.Student;
 
-import DAO.StudentDAO;
-import Models.Student;
+import DAO.InstructorDAO;
+import Models.Course;
+import Models.Instructor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -19,7 +20,7 @@ import java.util.List;
  *
  * @author DELL
  */
-public class ListStudentsServlet extends HttpServlet {
+public class ListInstructorsServlet extends HttpServlet {
 
         /**
          * Processes requests for both HTTP <code>GET</code> and
@@ -59,14 +60,19 @@ public class ListStudentsServlet extends HttpServlet {
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
-                StudentDAO studentDao = new StudentDAO();
-                List<Student> listStudent = new ArrayList<>();
-                listStudent = studentDao.getAllStudents();
-                
-                request.setAttribute("listStudent", listStudent);
-                int total = studentDao.getTotalStudentNumber();
+                InstructorDAO instructorDao = new InstructorDAO();
+                List<Instructor> listInstructor = new ArrayList<>();
+                listInstructor = instructorDao.getAllInstructors();
+
+                for (Instructor instructor : listInstructor) {
+                        List<Course> courses = instructorDao.getAllCoursesByInstructorId(instructor.getInstructorID());
+                        instructor.setCourses(courses);
+                }
+
+                request.setAttribute("listInstructor", listInstructor);
+                int total = instructorDao.getTotalInstructorNumber();
                 request.setAttribute("total", total);
-                request.getRequestDispatcher("liststudent.jsp")
+                request.getRequestDispatcher("listinstructor.jsp")
                         .forward(request, response);
         }
 

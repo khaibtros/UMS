@@ -2,7 +2,7 @@ package Models;
 
 import java.util.Date;
 
-public class Tuition {
+public class TuitionFee {
     private int tuitionFeeID;
     private int studentID;
     private double amount;
@@ -10,7 +10,7 @@ public class Tuition {
     private String paymentMethod;
     private String paymentStatus;
 
-    public Tuition(int tuitionFeeID, int studentID, double amount, Date dueDate, String paymentMethod, String paymentStatus) {
+    public TuitionFee(int tuitionFeeID, int studentID, double amount, Date dueDate, String paymentMethod, String paymentStatus) {
         this.tuitionFeeID = tuitionFeeID;
         this.studentID = studentID;
         this.amount = amount;
