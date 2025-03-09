@@ -75,6 +75,7 @@
                                                     <th>ID</th>
                                                     <th>Instructor Name</th>
                                                     <th>Hire Date</th>
+                                                    <th>Salary</th>
                                                     <th>Courses<th>
                                                 </tr>
                                             </thead>
@@ -85,6 +86,7 @@
                                                         <td>${instructor.instructorID}</td>
                                                         <td>${instructor.firstName} ${instructor.lastName}</td>
                                                         <td>${instructor.hireDate}</td>
+                                                        <td>${instructor.salary}</td>
                                                         <td>
                                                             <c:forEach var="course" items="${instructor.courses}">
                                                                 ${course.name}<br/>
@@ -109,57 +111,6 @@
                 <%--<%@include file="accessdenied.jsp" %>--%>
                 <%--</c:if>--%>
                 <!--not admin end-->
-
-                <!-- Modal Form -->
-                <c:if test="${not empty param.updateId}">
-                    <div class="modal">
-                        <div class="modal-content">
-                            <h2>Update Student</h2>
-                            <form action="students/update" method="POST">
-                                <input type="hidden" name="studentId" value="${param.updateId}">
-                                <label>First Name:</label>
-                                <input type="text" name="firstName" required>
-                                <label>Last Name:</label>
-                                <input type="text" name="lastName" required>
-                                <button type="submit">Update</button>
-                                <a href="students" class="close-btn">Cancel</a>
-                            </form>
-                        </div>
-                    </div>
-                </c:if>
-
-                <style>
-                    .modal {
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: rgba(0, 0, 0, 0.5);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-
-                    .modal-content {
-                        background: white;
-                        padding: 20px;
-                        border-radius: 8px;
-                        width: 300px;
-                        text-align: center;
-                    }
-
-                    .close-btn {
-                        display: inline-block;
-                        margin-top: 10px;
-                        padding: 5px 10px;
-                        background: red;
-                        color: white;
-                        text-decoration: none;
-                        border-radius: 5px;
-                    }
-                </style>
-
 
                 <%@include file="footer.jsp" %>
 
