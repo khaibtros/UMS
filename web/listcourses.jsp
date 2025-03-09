@@ -57,7 +57,6 @@
                                 </div>
                             </div>
                             <div class="card">
-
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="datatable table table-hover table-center align-middle mb-0">
@@ -65,16 +64,24 @@
                                                 <tr>
                                                     <th>Course ID</th>
                                                     <th>Course Name</th>
-                                                    <th>Credits</th>
+                                                    <th>Code</th>
+                                                    <th>Description</th>
+                                                    <th>Major ID</th>
+                                                    <th>Semester ID</th>
+                                                    <th>Fee Amount</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
                                                 <c:forEach var="course" items="${listCourse}">
                                                     <tr>
-                                                        <td>${course.courseId}</td>
-                                                        <td>${course.courseName}</td>
-                                                        <td>${course.credits}</td>
+                                                        <td>${course.courseID}</td>
+                                                        <td>${course.name}</td>
+                                                        <td>${course.code}</td>
+                                                        <td>${course.description}</td>
+                                                        <td>${course.majorID}</td>
+                                                        <td>${course.semesterID}</td>
+                                                        <td>${course.feeAmount}</td>
                                                     </tr>
                                                 </c:forEach>
                                             </tbody>
@@ -82,7 +89,6 @@
                                     </div>
                                 </div>
                                 <div class="pagination justify-content-center">
-
                                 </div>
                             </div>
                         </div>
@@ -101,5 +107,4 @@
             <script src="assets/js/script.js"></script>
 
     </body>
-
 </html>
