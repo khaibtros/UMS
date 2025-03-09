@@ -21,7 +21,7 @@ import java.util.List;
  * @author DELL
  */
 
-//fffff
+
 public class ListInstructorsServlet extends HttpServlet {
 
         /**
