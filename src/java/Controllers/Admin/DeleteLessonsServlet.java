@@ -3,27 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller.admin;
+package Controllers.Admin;
 
-
-import DAO.CourseDAO;
-import Models.Course;
-import jakarta.servlet.RequestDispatcher;
+import DAO.LessonDAO;
+import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 /**
  *
- * @author ManhTD
+ * @author DELL
  */
-@WebServlet(name="courses", urlPatterns={"/courses"})
-public class ListCourseServlet extends HttpServlet {
+public class DeleteLessonsServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -40,10 +34,10 @@ public class ListCourseServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ListCourseServlet</title>");  
+            out.println("<title>Servlet DeleteLessonsServlet</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ListCourseServlet at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet DeleteLessonsServlet at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,15 +53,18 @@ public class ListCourseServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-        CourseDAO cDAO = new CourseDAO();
-        List<Course> lCour = cDAO.getAllCourses();
-        request.setAttribute("listCourse", lCour);
-        request.setAttribute("totalCourses", lCour.size());
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("listcourses.jsp");
-        dispatcher.forward(request, response);
-    }
+    throws ServletException, IOException {
+        String id_raw = request.getParameter("id");
+        int id;
+        try {
+            id = Integer.parseInt(id_raw);
+            LessonDAO lessonDao = new LessonDAO();
+            lessonDao.deleteLesson(id);
+            response.sendRedirect("lessons");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    } 
 
     /** 
      * Handles the HTTP <code>POST</code> method.

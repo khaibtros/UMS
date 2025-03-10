@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>ListStudentsServlet</servlet-name>
-        <servlet-class>Controllers.Student.ListStudentsServlet</servlet-class>
+        <servlet-class>Controllers.Admin.ListStudentsServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateStudentsServlet</servlet-name>
@@ -18,7 +18,31 @@
     </servlet>
     <servlet>
         <servlet-name>ListInstructorsServlet</servlet-name>
-        <servlet-class>Controllers.Student.ListInstructorsServlet</servlet-class>
+        <servlet-class>Controllers.Admin.ListInstructorsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListCoursesServlet</servlet-name>
+        <servlet-class>Controllers.Admin.ListCoursesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListClassesServlet</servlet-name>
+        <servlet-class>Controllers.Admin.ListClassesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListLessonsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.ListLessonsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditLessonsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.EditLessonsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddLessonsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.AddLessonsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteLessonsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.DeleteLessonsServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
@@ -39,6 +63,30 @@
     <servlet-mapping>
         <servlet-name>ListInstructorsServlet</servlet-name>
         <url-pattern>/instructors</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListCoursesServlet</servlet-name>
+        <url-pattern>/courses</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListClassesServlet</servlet-name>
+        <url-pattern>/classes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListLessonsServlet</servlet-name>
+        <url-pattern>/lessons</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditLessonsServlet</servlet-name>
+        <url-pattern>/editlesson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddLessonsServlet</servlet-name>
+        <url-pattern>/addlesson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteLessonsServlet</servlet-name>
+        <url-pattern>/deletelesson</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

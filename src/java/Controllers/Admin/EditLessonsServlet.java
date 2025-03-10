@@ -2,24 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package Controllers.Student;
+package Controllers.Admin;
 
-import DAO.StudentDAO;
-import Models.Student;
+import DAO.LessonDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Date;
+import java.sql.Time;
 
 /**
  *
  * @author DELL
  */
-public class ListStudentsServlet extends HttpServlet {
+public class EditLessonsServlet extends HttpServlet {
 
         /**
          * Processes requests for both HTTP <code>GET</code> and
@@ -38,10 +37,10 @@ public class ListStudentsServlet extends HttpServlet {
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
                         out.println("<head>");
-                        out.println("<title>Servlet ListStudentsServlet</title>");
+                        out.println("<title>Servlet EditLessonsServlet</title>");
                         out.println("</head>");
                         out.println("<body>");
-                        out.println("<h1>Servlet ListStudentsServlet at " + request.getContextPath() + "</h1>");
+                        out.println("<h1>Servlet EditLessonsServlet at " + request.getContextPath() + "</h1>");
                         out.println("</body>");
                         out.println("</html>");
                 }
@@ -59,15 +58,7 @@ public class ListStudentsServlet extends HttpServlet {
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
-                StudentDAO studentDao = new StudentDAO();
-                List<Student> listStudent = new ArrayList<>();
-                listStudent = studentDao.getAllStudents();
-                
-                request.setAttribute("listStudent", listStudent);
-                int total = studentDao.getTotalStudentNumber();
-                request.setAttribute("total", total);
-                request.getRequestDispatcher("liststudent.jsp")
-                        .forward(request, response);
+                processRequest(request, response);
         }
 
         /**
@@ -81,7 +72,27 @@ public class ListStudentsServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
-                processRequest(request, response);
+                try {
+                        int lessonId = Integer.parseInt(request.getParameter("lessonId"));
+                        int courseId = Integer.parseInt(request.getParameter("courseId"));
+                        int classId = Integer.parseInt(request.getParameter("classId"));
+                        int instructorId = Integer.parseInt(request.getParameter("instructorId"));
+                        int roomId = Integer.parseInt(request.getParameter("roomId"));
+                        Date date = Date.valueOf(request.getParameter("date"));
+                        String dayOfWeek = request.getParameter("dayOfWeek");
+                        Time startTime = Time.valueOf(request.getParameter("startTime") + ":00");
+                        Time endTime = Time.valueOf(request.getParameter("endTime") + ":00");
+                        String content = request.getParameter("content");
+
+                        LessonDAO lessonDAO = new LessonDAO();
+                        lessonDAO.updateLesson(lessonId, courseId, classId, instructorId, roomId, date, dayOfWeek, startTime, endTime, content);
+
+                        response.sendRedirect("lessons");
+                } catch (Exception e) {
+                        e.printStackTrace();
+                        request.setAttribute("error", "Invalid data format. Please check your input.");
+                        request.getRequestDispatcher("editlesson.jsp").forward(request, response);
+                }
         }
 
         /**

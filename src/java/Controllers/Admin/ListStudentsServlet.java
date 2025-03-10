@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package Controllers.Student;
+package Controllers.Admin;
 
-import DAO.InstructorDAO;
-import Models.Course;
-import Models.Instructor;
+import DAO.StudentDAO;
+import Models.Student;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -20,9 +19,7 @@ import java.util.List;
  *
  * @author DELL
  */
-
-
-public class ListInstructorsServlet extends HttpServlet {
+public class ListStudentsServlet extends HttpServlet {
 
         /**
          * Processes requests for both HTTP <code>GET</code> and
@@ -62,19 +59,14 @@ public class ListInstructorsServlet extends HttpServlet {
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
-                InstructorDAO instructorDao = new InstructorDAO();
-                List<Instructor> listInstructor = new ArrayList<>();
-                listInstructor = instructorDao.getAllInstructors();
-
-                for (Instructor instructor : listInstructor) {
-                        List<Course> courses = instructorDao.getAllCoursesByInstructorId(instructor.getInstructorID());
-                        instructor.setCourses(courses);
-                }
-
-                request.setAttribute("listInstructor", listInstructor);
-                int total = instructorDao.getTotalInstructorNumber();
+                StudentDAO studentDao = new StudentDAO();
+                List<Student> listStudent = new ArrayList<>();
+                listStudent = studentDao.getAllStudents();
+                
+                request.setAttribute("listStudent", listStudent);
+                int total = studentDao.getTotalStudentNumber();
                 request.setAttribute("total", total);
-                request.getRequestDispatcher("listinstructor.jsp")
+                request.getRequestDispatcher("liststudent.jsp")
                         .forward(request, response);
         }
 

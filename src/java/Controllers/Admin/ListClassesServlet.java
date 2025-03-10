@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package controller.admin;
+package Controllers.Admin;
 
 import DAO.ClassDAO;
 import Models.Class;
@@ -22,7 +22,7 @@ import java.util.List;
  *
  * @author ManhTD
  */
-public class ListClassServlet extends HttpServlet {
+public class ListClassesServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
