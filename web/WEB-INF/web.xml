@@ -44,6 +44,14 @@
         <servlet-name>DeleteLessonsServlet</servlet-name>
         <servlet-class>Controllers.Admin.DeleteLessonsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListEnrollmentsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.ListEnrollmentsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditEnrollmentsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.EditEnrollmentsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -87,6 +95,14 @@
     <servlet-mapping>
         <servlet-name>DeleteLessonsServlet</servlet-name>
         <url-pattern>/deletelesson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListEnrollmentsServlet</servlet-name>
+        <url-pattern>/enrollments</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditEnrollmentsServlet</servlet-name>
+        <url-pattern>/editenrollment</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

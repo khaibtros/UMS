@@ -4,21 +4,21 @@
  */
 package Controllers.Admin;
 
-import DAO.LessonDAO;
+import DAO.EnrollmentDAO;
+import Models.Enrollment;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.Date;
-import java.sql.Time;
+import java.util.List;
 
 /**
  *
  * @author DELL
  */
-public class EditLessonsServlet extends HttpServlet {
+public class ListEnrollmentsServlet extends HttpServlet {
 
         /**
          * Processes requests for both HTTP <code>GET</code> and
@@ -37,10 +37,10 @@ public class EditLessonsServlet extends HttpServlet {
                         out.println("<!DOCTYPE html>");
                         out.println("<html>");
                         out.println("<head>");
-                        out.println("<title>Servlet EditLessonsServlet</title>");
+                        out.println("<title>Servlet ListEnrollmentsServlet</title>");
                         out.println("</head>");
                         out.println("<body>");
-                        out.println("<h1>Servlet EditLessonsServlet at " + request.getContextPath() + "</h1>");
+                        out.println("<h1>Servlet ListEnrollmentsServlet at " + request.getContextPath() + "</h1>");
                         out.println("</body>");
                         out.println("</html>");
                 }
@@ -58,7 +58,17 @@ public class EditLessonsServlet extends HttpServlet {
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
-                processRequest(request, response);
+                String studentIdStr = request.getParameter("studentId");
+                
+                if (studentIdStr != null && !studentIdStr.isEmpty()) {
+                        int studentId = Integer.parseInt(studentIdStr);
+                        EnrollmentDAO enrollmentDAO = new EnrollmentDAO();
+                        List<Enrollment> listEnrollment = enrollmentDAO.getEnrollmentsByStudentId(studentId);
+
+                        request.setAttribute("listEnrollment", listEnrollment);
+
+                        request.getRequestDispatcher("enrollment.jsp").forward(request, response);
+                } 
         }
 
         /**
@@ -72,24 +82,7 @@ public class EditLessonsServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException {
-                try {
-                        int lessonId = Integer.parseInt(request.getParameter("lessonId"));
-                        int courseId = Integer.parseInt(request.getParameter("courseId"));
-                        int classId = Integer.parseInt(request.getParameter("classId"));
-                        int instructorId = Integer.parseInt(request.getParameter("instructorId"));
-                        int roomId = Integer.parseInt(request.getParameter("roomId"));
-                        Date date = Date.valueOf(request.getParameter("date"));
-                        String dayOfWeek = request.getParameter("dayOfWeek");
-                        Time startTime = Time.valueOf(request.getParameter("startTime") + ":00");
-                        Time endTime = Time.valueOf(request.getParameter("endTime") + ":00");
-                        String content = request.getParameter("content");
-
-                        LessonDAO lessonDAO = new LessonDAO();
-                        lessonDAO.updateLesson(lessonId, courseId, classId, instructorId, roomId, date, dayOfWeek, startTime, endTime, content);
-
-                        response.sendRedirect("lessons");
-                } catch (Exception e) {
-                }
+                processRequest(request, response);
         }
 
         /**

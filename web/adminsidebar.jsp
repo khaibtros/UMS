@@ -20,11 +20,13 @@
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="instructors"><i class="fas fa-list-alt"></i>List Instructors<span><i 
                                     class="fas fa-chevron-right"></i></span></a></li>
-                     <li><a href="courses"><i class="fas fa-list-alt"></i>List Courses<span><i 
+                    <li><a href="courses"><i class="fas fa-list-alt"></i>List Courses<span><i 
                                     class="fas fa-chevron-right"></i></span></a></li>               
                     <li><a href="listbooking"><i class="fas fa-list-alt"></i>List Booking <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="classes"><i class="fas fa-list-alt"></i>List Classes <span><i
+                                    class="fas fa-chevron-right"></i></span></a></li>
+                    <li><a href="enrollment.jsp"><i class="fas fa-list-alt"></i>List Enrollments<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="listcategory"><i class="fas fa-list-alt"></i>List Categories <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
