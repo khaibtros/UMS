@@ -30,6 +30,10 @@
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="listcategory"><i class="fas fa-list-alt"></i>List Categories <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
+                    <li><a href="listrooms"><i class="fas fa-list-alt"></i>List Rooms <span><i
+                                    class="fas fa-chevron-right"></i></span></a></li>
+                    <li><a href="listmajor"><i class="fas fa-list-alt"></i>List Majors <span><i
+                                    class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="viewtransaction"><i class="fas fa-money-bill-alt"></i>View Transactions <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="editfaq"><i class="fas fa-question-circle"></i>FAQ <span><i
