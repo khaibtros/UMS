@@ -52,6 +52,14 @@
         <servlet-name>EditEnrollmentsServlet</servlet-name>
         <servlet-class>Controllers.Admin.EditEnrollmentsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListRoomServlet</servlet-name>
+        <servlet-class>Controllers.Admin.ListRoomServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListMajorServlet</servlet-name>
+        <servlet-class>Controllers.Admin.ListMajorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -103,6 +111,14 @@
     <servlet-mapping>
         <servlet-name>EditEnrollmentsServlet</servlet-name>
         <url-pattern>/editenrollment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListRoomServlet</servlet-name>
+        <url-pattern>/listrooms</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListMajorServlet</servlet-name>
+        <url-pattern>/listmajor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
