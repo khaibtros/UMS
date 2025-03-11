@@ -168,7 +168,7 @@
                                                         <th style="width: 100px;">CourseID</th>
                                                         <th style="width: 100px;">ClassID</th>
                                                         <th style="width: 100px;">InstructorID</th>
-                                                         <th style="width: 100px;">RoomID</th>
+                                                        <th style="width: 100px;">RoomID</th>
                                                         <th style="width: 100px;">ACTION</th>
                                                     </tr>
                                                 </thead>
@@ -179,7 +179,7 @@
                                                             <td style="width: 100px;white-space: pre-wrap;">${lesson.courseID}</td>
                                                             <td style="width: 100px; white-space: pre-wrap;">${lesson.classID}</td>
                                                             <td style="width: 100px; white-space: pre-wrap;">${lesson.instructorID}</td>
-                                                               <td style="width: 100px; white-space: pre-wrap;">${lesson.roomID}</td>
+                                                            <td style="width: 100px; white-space: pre-wrap;">${lesson.roomID}</td>
                                                             <td style="width: 100px;">
                                                                 <button class="btn btn-primary" onclick="toggleEditForm(this)">Edit</button>
                                                                 <button onclick="doDelete(${lesson.lessonID})" class="btn btn-danger">Delete</button>
@@ -190,85 +190,96 @@
                                                             <td colspan="4">
                                                                 <form action="editlesson" method="POST">
                                                                     <input type="hidden" name="lessonId" value="${lesson.lessonID}">
+                                                                    <!-- CourseID -->
                                                                     <div class="form-group">
                                                                         <label>CourseID:</label>
                                                                         <select class="form-control" name="courseId">
-                                                                            <option value="1" >1</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="3">3</option>
-                                                                            <option value="19">19</option>
-                                                                            <option value="20">20</option>
-                                                                            <option value="21">21</option>
-                                                                            <option value="37">37</option>
-                                                                            <option value="38">38</option>
-                                                                            <option value="39">39</option>
+                                                                            <option value="1" ${lesson.courseID == 1 ? "selected" : ""}>1</option>
+                                                                            <option value="2" ${lesson.courseID == 2 ? "selected" : ""}>2</option>
+                                                                            <option value="3" ${lesson.courseID == 3 ? "selected" : ""}>3</option>
+                                                                            <option value="19" ${lesson.courseID == 19 ? "selected" : ""}>19</option>
+                                                                            <option value="20" ${lesson.courseID == 20 ? "selected" : ""}>20</option>
+                                                                            <option value="21" ${lesson.courseID == 21 ? "selected" : ""}>21</option>
+                                                                            <option value="37" ${lesson.courseID == 37 ? "selected" : ""}>37</option>
+                                                                            <option value="38" ${lesson.courseID == 38 ? "selected" : ""}>38</option>
+                                                                            <option value="39" ${lesson.courseID == 39 ? "selected" : ""}>39</option>
                                                                         </select>
                                                                     </div>
+
+                                                                    <!-- ClassID -->
                                                                     <div class="form-group">
                                                                         <label>ClassID:</label>
                                                                         <select class="form-control" name="classId">
-                                                                            <option value="1" >1</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="3">3</option>
+                                                                            <option value="1" ${lesson.classID == 1 ? "selected" : ""}>1</option>
+                                                                            <option value="2" ${lesson.classID == 2 ? "selected" : ""}>2</option>
+                                                                            <option value="3" ${lesson.classID == 3 ? "selected" : ""}>3</option>
                                                                         </select>
                                                                     </div>
+
+                                                                    <!-- InstructorID -->
                                                                     <div class="form-group">
                                                                         <label>InstructorID:</label>
                                                                         <select class="form-control" name="instructorId">
-                                                                            <option value="1" >1</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="3">3</option>
-                                                                            <option value="4">4</option>
-                                                                            <option value="5">5</option>
-                                                                            <option value="6">6</option>
-                                                                            <option value="7">7</option>
-                                                                            <option value="8">8</option>
-                                                                            <option value="9">9</option>
+                                                                            <option value="1" ${lesson.instructorID == 1 ? "selected" : ""}>1</option>
+                                                                            <option value="2" ${lesson.instructorID == 2 ? "selected" : ""}>2</option>
+                                                                            <option value="3" ${lesson.instructorID == 3 ? "selected" : ""}>3</option>
+                                                                            <option value="4" ${lesson.instructorID == 4 ? "selected" : ""}>4</option>
+                                                                            <option value="5" ${lesson.instructorID == 5 ? "selected" : ""}>5</option>
+                                                                            <option value="6" ${lesson.instructorID == 6 ? "selected" : ""}>6</option>
+                                                                            <option value="7" ${lesson.instructorID == 7 ? "selected" : ""}>7</option>
+                                                                            <option value="8" ${lesson.instructorID == 8 ? "selected" : ""}>8</option>
+                                                                            <option value="9" ${lesson.instructorID == 9 ? "selected" : ""}>9</option>
                                                                         </select>
                                                                     </div>
+
+                                                                    <!-- RoomID -->
                                                                     <div class="form-group">
                                                                         <label>RoomID:</label>
                                                                         <select class="form-control" name="roomId">
-                                                                            <option value="1" >1</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="3">3</option>
-                                                                            <option value="4">4</option>
-                                                                            <option value="5">5</option>
+                                                                            <option value="1" ${lesson.roomID == 1 ? "selected" : ""}>1</option>
+                                                                            <option value="2" ${lesson.roomID == 2 ? "selected" : ""}>2</option>
+                                                                            <option value="3" ${lesson.roomID == 3 ? "selected" : ""}>3</option>
+                                                                            <option value="4" ${lesson.roomID == 4 ? "selected" : ""}>4</option>
+                                                                            <option value="5" ${lesson.roomID == 5 ? "selected" : ""}>5</option>
                                                                         </select>
                                                                     </div>
+
+                                                                    <!-- Date -->
                                                                     <div class="form-group">
                                                                         <label for="date">Select Date:</label>
-                                                                        <input type="date" class="form-control" name="date" required>
+                                                                        <input type="date" class="form-control" name="date" value="${lesson.date}" required>
                                                                     </div>
-                                                                        <!-- Day of the Week Selection -->
+
+                                                                    <!-- Day of the Week -->
                                                                     <div class="form-group">
                                                                         <label for="dayOfWeek">Day of the Week:</label>
                                                                         <select class="form-control" name="dayOfWeek" required>
-                                                                            <option value="Monday">Monday</option>
-                                                                            <option value="Tuesday">Tuesday</option>
-                                                                            <option value="Wednesday">Wednesday</option>
-                                                                            <option value="Thursday">Thursday</option>
-                                                                            <option value="Friday">Friday</option>
+                                                                            <option value="Monday" ${lesson.dayOfWeek == 'Monday' ? "selected" : ""}>Monday</option>
+                                                                            <option value="Tuesday" ${lesson.dayOfWeek == 'Tuesday' ? "selected" : ""}>Tuesday</option>
+                                                                            <option value="Wednesday" ${lesson.dayOfWeek == 'Wednesday' ? "selected" : ""}>Wednesday</option>
+                                                                            <option value="Thursday" ${lesson.dayOfWeek == 'Thursday' ? "selected" : ""}>Thursday</option>
+                                                                            <option value="Friday" ${lesson.dayOfWeek == 'Friday' ? "selected" : ""}>Friday</option>
                                                                         </select>
                                                                     </div>
 
-                                                                    <!-- Start Time Selection -->
+                                                                    <!-- Start Time -->
                                                                     <div class="form-group">
                                                                         <label for="startTime">Start Time:</label>
-                                                                        <input type="time" class="form-control" name="startTime" required>
+                                                                        <input type="time" class="form-control" name="startTime" value="${lesson.startTime}" required>
                                                                     </div>
 
-                                                                    <!-- End Time Selection -->
+                                                                    <!-- End Time -->
                                                                     <div class="form-group">
                                                                         <label for="endTime">End Time:</label>
-                                                                        <input type="time" class="form-control" name="endTime"required>
+                                                                        <input type="time" class="form-control" name="endTime" value="${lesson.endTime}" required>
                                                                     </div>
 
-                                                                        <!-- Content Text Area -->
+                                                                    <!-- Content -->
                                                                     <div class="form-group">
                                                                         <label for="content">Lesson Content:</label>
-                                                                        <textarea class="form-control" name="content" rows="4" placeholder="Enter lesson content"></textarea>
+                                                                        <textarea class="form-control" name="content" rows="4">${lesson.content}</textarea>
                                                                     </div>
+
                                                                     <input type="hidden" name="action" value="edit">
                                                                     <button type="submit" class="btn btn-primary">Save Changes</button>
                                                                 </form>

@@ -28,6 +28,8 @@
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="enrollment.jsp"><i class="fas fa-list-alt"></i>List Enrollments<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
+                    <li><a href="listattendances.jsp"><i class="fas fa-list-alt"></i>List Attendances<span><i
+                                    class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="listcategory"><i class="fas fa-list-alt"></i>List Categories <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="listrooms"><i class="fas fa-list-alt"></i>List Rooms <span><i
