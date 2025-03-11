@@ -52,6 +52,22 @@
         <servlet-name>EditEnrollmentsServlet</servlet-name>
         <servlet-class>Controllers.Admin.EditEnrollmentsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditAnnouncementsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.EditAnnouncementsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListAnnouncementsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.ListAnnouncementsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddAnnouncementsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.AddAnnouncementsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteAnnouncementsServlet</servlet-name>
+        <servlet-class>Controllers.Admin.DeleteAnnouncementsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -103,6 +119,22 @@
     <servlet-mapping>
         <servlet-name>EditEnrollmentsServlet</servlet-name>
         <url-pattern>/editenrollment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAnnouncementsServlet</servlet-name>
+        <url-pattern>/editannouncement</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListAnnouncementsServlet</servlet-name>
+        <url-pattern>/announcements</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddAnnouncementsServlet</servlet-name>
+        <url-pattern>/addannouncement</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAnnouncementsServlet</servlet-name>
+        <url-pattern>/deleteannouncement</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
