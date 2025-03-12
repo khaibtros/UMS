@@ -10,14 +10,14 @@
         <title>List Student</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+       <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css">
 
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
     <body>
@@ -25,7 +25,7 @@
         <div class="main-wrapper">
 
             <!-- Header is placed here -->
-            <%@include file="header.jsp" %>
+            <%@include file="../header.jsp" %>
             <!--End of header-->
 
             <%--<c:if test="${users.roleId == 1}">--%>
@@ -33,7 +33,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-md-12 col-12">
-                            <h2 class="breadcrumb-title">List of Instructors</h2>
+                            <h2 class="breadcrumb-title">List of Students</h2>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                                     <div class="dash-widget-info">
                                         <%int total = (int) request.getAttribute("total");%>
                                         <h3><%= total%></h3>
-                                        <h6>Instructors</h6>
+                                        <h6>Students</h6>
                                     </div>
                                 </div>
                             </div>
@@ -73,25 +73,21 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Instructor Name</th>
-                                                    <th>Hire Date</th>
-                                                    <th>Salary</th>
-                                                    <th>Courses<th>
+                                                    <th>Student Name</th>
+                                                    <th>Phone</th>
+                                                    <th>DOB</th>
+                                                    <th>MajorID</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                <c:forEach var="instructor" items="${listInstructor}">
+                                                <c:forEach var="student" items="${listStudent}">
                                                     <tr>
-                                                        <td>${instructor.instructorID}</td>
-                                                        <td>${instructor.firstName} ${instructor.lastName}</td>
-                                                        <td>${instructor.hireDate}</td>
-                                                        <td>${instructor.salary}</td>
-                                                        <td>
-                                                            <c:forEach var="course" items="${instructor.courses}">
-                                                                ${course.name}<br/>
-                                                            </c:forEach>
-                                                        </td>
+                                                        <td>${student.studentId}</td>
+                                                        <td>${student.firstName} ${student.lastName}</td>
+                                                        <td>${student.phone}</td>
+                                                        <td>${student.dob}</td>
+                                                        <td>${student.majorId}</td>
                                                     </tr>
                                                 </c:forEach>
                                             </tbody>
@@ -112,17 +108,17 @@
                 <%--</c:if>--%>
                 <!--not admin end-->
 
-                <%@include file="footer.jsp" %>
+                <%@include file="../footer.jsp" %>
 
             </div>
 
-            <script src="assets/js/jquery-3.6.0.min.js"></script>
-            <script src="assets/js/bootstrap.bundle.min.js"></script>
-            <script src="assets/js/feather.min.js"></script>
-            <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-            <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-            <script src="assets/plugins/datatables/datatables.min.js"></script>
-            <script src="assets/js/script.js"></script>
+            <script src="../assets/js/jquery-3.6.0.min.js"></script>
+            <script src="../assets/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/js/feather.min.js"></script>
+            <script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+            <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="../assets/plugins/datatables/datatables.min.js"></script>
+            <script src="../assets/js/script.js"></script>
 
     </body>
 

@@ -6,26 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>Lessons</title>
 
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css">
 
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/aos/aos.css">
+        <link rel="stylesheet" href="../assets/plugins/aos/aos.css">
 
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
     <body>
         <div class="main-wrapper">
 
             <!-- Header is placed here -->
-            <%@include file="header.jsp" %>
+            <%@include file="../header.jsp" %>
             <!--End of header-->
 
             <!--Admin user start-->
@@ -190,7 +190,7 @@
         <!--not admin end-->
 
         <!-- end of Pre footer -->
-        <%@include file="footer.jsp" %>
+        <%@include file="../footer.jsp" %>
         <!-- footer is place here -->
 
     </div>

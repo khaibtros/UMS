@@ -8,24 +8,24 @@
 
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css">
 
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/aos/aos.css">
+        <link rel="stylesheet" href="../assets/plugins/aos/aos.css">
 
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     </head>
     <body>
         <div class="main-wrapper">
 
             <!-- Header is placed here -->
-            <%@include file="header.jsp" %>
+            <%@include file="../header.jsp" %>
             <!--End of header-->
 
             <!--Admin user start-->
@@ -34,7 +34,7 @@
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-md-12 col-12">
-                            <h2 class="breadcrumb-title">Edit Lessons</h2>
+                            <h2 class="breadcrumb-title">List of Lessons</h2>
                         </div>
                     </div>
                 </div>
@@ -309,22 +309,22 @@
         <!--not admin end-->
 
         <!-- end of Pre footer -->
-        <%@include file="footer.jsp" %>
+        <%@include file="../footer.jsp" %>
         <!-- footer is place here -->
 
     </div>
 
 
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
 
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
 
-    <script src="assets/plugins/aos/aos.js"></script>
+    <script src="../assets/plugins/aos/aos.js"></script>
 
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script type="text/javascript">
                                                                     // prompt if you want to delete
                                                                     function doDelete(id) {

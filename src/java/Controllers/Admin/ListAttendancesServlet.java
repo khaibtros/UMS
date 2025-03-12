@@ -67,7 +67,7 @@ public class ListAttendancesServlet extends HttpServlet {
 
                         request.setAttribute("listAttendance", listAttendance);
 
-                        request.getRequestDispatcher("listattendances.jsp").forward(request, response);
+                        request.getRequestDispatcher("attendances.jsp").forward(request, response);
                 } 
     } 
 

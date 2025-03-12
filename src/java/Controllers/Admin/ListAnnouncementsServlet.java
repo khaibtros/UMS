@@ -63,7 +63,7 @@ public class ListAnnouncementsServlet extends HttpServlet {
                 List<Announcement> listAnnouncement = announcementDao.getAllAnnouncements();
 
                 request.setAttribute("listAnnouncement", listAnnouncement); 
-                request.getRequestDispatcher("announcement.jsp").forward(request, response);
+                request.getRequestDispatcher("announcements.jsp").forward(request, response);
 
         }
 

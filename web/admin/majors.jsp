@@ -15,19 +15,21 @@
         <title>List Majors</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css">
+
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
     <body>
 
         <div class="main-wrapper">
 
-            <%@include file="header.jsp" %>
+            <%@include file="../header.jsp" %>
 
             <div class="breadcrumb-bar">
                 <div class="container-fluid">
@@ -74,15 +76,15 @@
                                             </thead>
 
                                             <tbody>
-                                                <c:forEach var="majorItem" items="${listMajor}">
-                                                    <tr>
-                                                        <td>${majorItem.majorID}</td>
-                                                        <td>${majorItem.majorCode}</td>
-                                                        <td>${majorItem.name}</td>
-                                                        <td>${majorItem.description}</td>
-                                                        <td>${majorItem.totalSemester}</td>
-                                                    </tr>
-                                                </c:forEach>
+                                            <c:forEach var="majorItem" items="${listMajor}">
+                                                <tr>
+                                                    <td>${majorItem.majorID}</td>
+                                                    <td>${majorItem.majorCode}</td>
+                                                    <td>${majorItem.name}</td>
+                                                    <td>${majorItem.description}</td>
+                                                    <td>${majorItem.totalSemester}</td>
+                                                </tr>
+                                            </c:forEach>
                                             </tbody>
                                         </table>
                                     </div>
@@ -94,16 +96,16 @@
                     </div>
                 </div>
 
-                <%@include file="footer.jsp" %>
+                <%@include file="../footer.jsp" %>
             </div>
 
-            <script src="assets/js/jquery-3.6.0.min.js"></script>
-            <script src="assets/js/bootstrap.bundle.min.js"></script>
-            <script src="assets/js/feather.min.js"></script>
-            <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-            <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
-            <script src="assets/plugins/datatables/datatables.min.js"></script>
-            <script src="assets/js/script.js"></script>
+            <script src="../assets/js/jquery-3.6.0.min.js"></script>
+            <script src="../assets/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/js/feather.min.js"></script>
+            <script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+            <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="../assets/plugins/datatables/datatables.min.js"></script>
+            <script src="../assets/js/script.js"></script>
 
     </body>
 </html>

@@ -64,7 +64,7 @@ public class ListLessonsServlet extends HttpServlet {
                 listLesson = lessonDao.getAllLessons();
 
                 request.setAttribute("listLesson", listLesson);
-                request.getRequestDispatcher("lesson.jsp")
+                request.getRequestDispatcher("lessons.jsp")
                         .forward(request, response);
     } 
 

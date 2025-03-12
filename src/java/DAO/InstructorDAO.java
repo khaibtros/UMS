@@ -27,9 +27,9 @@ public class InstructorDAO {
                         rs = ps.executeQuery();
                         while (rs.next()) {
                                 int id = rs.getInt("InstructorID");
+                                int userId = rs.getInt("userId");
                                 String fn = rs.getString("FirstName");
                                 String ln = rs.getString("LastName");
-                                String em = rs.getString("Email");
                                 String ph = rs.getString("Phone");
                                 String addr = rs.getString("Address");
                                 Date dob = rs.getDate("DOB");
@@ -40,7 +40,7 @@ public class InstructorDAO {
                                 String status = rs.getString("Status");
 
                                 Instructor x = new Instructor(
-                                        id, fn, ln, em, ph, addr,
+                                        id, userId,fn, ln, ph, addr,
                                         dob, gen, salary, hireDate, endDate, status
                                 );
                                 lstInstructor.add(x);

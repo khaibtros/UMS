@@ -51,21 +51,20 @@
                             <div class="footer-contact-info">
                                 <div class="footer-address">
                                     <span><i class="fas fa-map-marker-alt"></i></span>
-                                    <p>${sessionScope.location}</p>
+                                    <p>FPT University Thach That, Ha Noi, Viet Nam</p>
                                 </div>
                                 <p>
                                     <i class="fas fa-phone-alt"></i>
-                                    ${sessionScope.tel}
+                                    0963676693
                                 </p>
                                 <p>
                                     <i class="fas fa-envelope"></i>
-                                    ${sessionScope.email}
+                                    OurUMS@gmail.com
                                 </p>
                                 <p>
                                     <i class="fas fa fa-globe"></i>
-                                    ${sessionScope.website}
+                                    OurUMS.com
                                 </p>
-
 
                             </div>
                         </div>
@@ -81,7 +80,7 @@
                     <div class="row">
                         <div class="col-12 text-center">
                             <div class="copyright-text">
-                                <p class="mb-0">&copy; 2023 CodeCoach. All rights reserved.</p>
+                                <p class="mb-0">&copy; 2025 CodeCoach. All rights reserved.</p>
                             </div>
                         </div>
                     </div>

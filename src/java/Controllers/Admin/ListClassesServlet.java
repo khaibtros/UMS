@@ -65,7 +65,7 @@ public class ListClassesServlet extends HttpServlet {
         request.setAttribute("listClass", claL);
         request.setAttribute("totalClasses", claL.size());
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("listclasses.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("classes.jsp");
         dispatcher.forward(request, response);
     } 
 

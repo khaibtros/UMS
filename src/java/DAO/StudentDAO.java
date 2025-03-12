@@ -29,9 +29,9 @@ public class StudentDAO {
                         rs = ps.executeQuery();
                         while (rs.next()) {
                                 int id = rs.getInt("StudentID");
+                                int userId = rs.getInt("userId");
                                 String fn = rs.getString("FirstName");
                                 String ln = rs.getString("LastName");
-                                String em = rs.getString("Email");
                                 String ph = rs.getString("Phone");
                                 String addr = rs.getString("Address");
                                 Date dob = rs.getDate("DOB");
@@ -42,7 +42,7 @@ public class StudentDAO {
                                 String gn = rs.getString("GuardianName");
                                 String gp = rs.getString("GuardianPhone");
 
-                                Student st = new Student(id, fn, ln, em, ph, addr, dob, gen, mjID, sd, gd, gn, gp);
+                                Student st = new Student(id, userId, fn, ln, ph, addr, dob, gen, mjID, sd, gd, gn, gp);
                                 lstStudent.add(st);
                         }
 

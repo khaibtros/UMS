@@ -57,8 +57,6 @@
                                     <div style="color: red"><%=error%></div>
                                     <%}
                                     %>
-                                    <div class="text-center dont-have">Don’t have an account? <a
-                                            href="register">Register</a></div>
                                 </form>
                             </div>
                         </div>

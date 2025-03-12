@@ -10,9 +10,9 @@ import java.util.List;
 public class Student {
 
         private int studentId;
+         private int userId;
         private String firstName;
         private String lastName;
-        private String email;
         private String phone;
         private String address;
         private Date dob;
@@ -28,14 +28,11 @@ public class Student {
         public Student() {
         }
 
-        public Student(int studentId, String firstName, String lastName, String email,
-                String phone, String address, Date dob, String gender,
-                int majorId, Date startDate, Date graduatedDate,
-                String guardianName, String guardianPhone) {
+        public Student(int studentId, int userId, String firstName, String lastName, String phone, String address, Date dob, String gender, int majorId, Date startDate, Date graduatedDate, String guardianName, String guardianPhone) {
                 this.studentId = studentId;
+                this.userId = userId;
                 this.firstName = firstName;
                 this.lastName = lastName;
-                this.email = email;
                 this.phone = phone;
                 this.address = address;
                 this.dob = dob;
@@ -47,13 +44,20 @@ public class Student {
                 this.guardianPhone = guardianPhone;
         }
         
-        // Getters and Setters
         public int getStudentId() {
                 return studentId;
         }
 
         public void setStudentId(int studentId) {
                 this.studentId = studentId;
+        }
+
+        public int getUserId() {
+                return userId;
+        }
+
+        public void setUserId(int userId) {
+                this.userId = userId;
         }
 
         public String getFirstName() {
@@ -70,14 +74,6 @@ public class Student {
 
         public void setLastName(String lastName) {
                 this.lastName = lastName;
-        }
-
-        public String getEmail() {
-                return email;
-        }
-
-        public void setEmail(String email) {
-                this.email = email;
         }
 
         public String getPhone() {
@@ -158,25 +154,5 @@ public class Student {
 
         public void setClasses(List<Class> classes) {
                 this.classes = classes;
-        }
-
-        // toString Method
-        @Override
-        public String toString() {
-                return "Student{"
-                        + "studentId=" + studentId
-                        + ", firstName='" + firstName + '\''
-                        + ", lastName='" + lastName + '\''
-                        + ", email='" + email + '\''
-                        + ", phone='" + phone + '\''
-                        + ", address='" + address + '\''
-                        + ", dob=" + dob
-                        + ", gender='" + gender + '\''
-                        + ", majorId=" + majorId
-                        + ", startDate=" + startDate
-                        + ", graduatedDate=" + graduatedDate
-                        + ", guardianName='" + guardianName + '\''
-                        + ", guardianPhone='" + guardianPhone + '\''
-                        + '}';
-        }
+        }       
 }

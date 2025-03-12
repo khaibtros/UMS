@@ -65,7 +65,7 @@
          request.setAttribute("listCourse", lCour);
          request.setAttribute("totalCourses", lCour.size());
  
-         RequestDispatcher dispatcher = request.getRequestDispatcher("listcourses.jsp");
+         RequestDispatcher dispatcher = request.getRequestDispatcher("courses.jsp");
          dispatcher.forward(request, response);
      }
  

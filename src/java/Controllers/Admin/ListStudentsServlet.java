@@ -66,7 +66,7 @@ public class ListStudentsServlet extends HttpServlet {
                 request.setAttribute("listStudent", listStudent);
                 int total = studentDao.getTotalStudentNumber();
                 request.setAttribute("total", total);
-                request.getRequestDispatcher("liststudent.jsp")
+                request.getRequestDispatcher("students.jsp")
                         .forward(request, response);
         }
 

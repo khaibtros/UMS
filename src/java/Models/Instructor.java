@@ -6,9 +6,9 @@ import java.util.List;
 public class Instructor {
 
         private int instructorID; // Primary key
+        private int userId;
         private String firstName;
         private String lastName;
-        private String email;
         private String phone;
         private String address;
         private Date dob; // Use java.sql.Date for compatibility with database
@@ -19,13 +19,14 @@ public class Instructor {
         private String status;
         private List<Course> courses;
 
-        // Constructor
-        public Instructor(int instructorID, String firstName, String lastName, String email, String phone,
-                String address, Date dob, String gender, double salary, Date hireDate, Date endDate, String status) {
+        public Instructor() {
+        }
+
+        public Instructor(int instructorID, int userId, String firstName, String lastName, String phone, String address, Date dob, String gender, double salary, Date hireDate, Date endDate, String status) {
                 this.instructorID = instructorID;
+                this.userId = userId;
                 this.firstName = firstName;
                 this.lastName = lastName;
-                this.email = email;
                 this.phone = phone;
                 this.address = address;
                 this.dob = dob;
@@ -36,25 +37,20 @@ public class Instructor {
                 this.status = status;
         }
 
-        // Default constructor
-        public Instructor() {
-        }
-
-        public void setCourses(List<Course> courses) {
-                this.courses = courses;
-        }
-
-        public List<Course> getCourses() {
-                return courses;
-        }
-        // Getters and Setters
-
         public int getInstructorID() {
                 return instructorID;
         }
 
         public void setInstructorID(int instructorID) {
                 this.instructorID = instructorID;
+        }
+
+        public int getUserId() {
+                return userId;
+        }
+
+        public void setUserId(int userId) {
+                this.userId = userId;
         }
 
         public String getFirstName() {
@@ -71,14 +67,6 @@ public class Instructor {
 
         public void setLastName(String lastName) {
                 this.lastName = lastName;
-        }
-
-        public String getEmail() {
-                return email;
-        }
-
-        public void setEmail(String email) {
-                this.email = email;
         }
 
         public String getPhone() {
@@ -145,21 +133,12 @@ public class Instructor {
                 this.status = status;
         }
 
-        @Override
-        public String toString() {
-                return "Instructor{"
-                        + "instructorID=" + instructorID
-                        + ", firstName='" + firstName + '\''
-                        + ", lastName='" + lastName + '\''
-                        + ", email='" + email + '\''
-                        + ", phone='" + phone + '\''
-                        + ", address='" + address + '\''
-                        + ", dob=" + dob
-                        + ", gender='" + gender + '\''
-                        + ", salary=" + salary
-                        + ", hireDate=" + hireDate
-                        + ", endDate=" + endDate
-                        + ", status='" + status + '\''
-                        + '}';
+        public List<Course> getCourses() {
+                return courses;
         }
+
+        public void setCourses(List<Course> courses) {
+                this.courses = courses;
+        }
+
 }

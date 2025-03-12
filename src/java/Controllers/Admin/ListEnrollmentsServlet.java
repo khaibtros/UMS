@@ -67,7 +67,7 @@ public class ListEnrollmentsServlet extends HttpServlet {
 
                         request.setAttribute("listEnrollment", listEnrollment);
 
-                        request.getRequestDispatcher("enrollment.jsp").forward(request, response);
+                        request.getRequestDispatcher("enrollments.jsp").forward(request, response);
                 } 
         }
 

@@ -79,7 +79,7 @@ public class EditEnrollmentsServlet extends HttpServlet {
                 if (referer != null && !referer.isEmpty()) {
                         response.sendRedirect(referer);
                 } else {
-                        response.sendRedirect("enrollment.jsp"); 
+                        response.sendRedirect("enrollments.jsp"); 
                 }
         }
 

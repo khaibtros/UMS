@@ -15,12 +15,12 @@
 
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css">
 
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <script>
             window.onload = function () {
             //bar chart start
@@ -262,21 +262,21 @@
 
 
             <!--Footer start-->
-            <%@include file="footer.jsp" %>
+            <%@include file="../footer.jsp" %>
             <!-- Footer end -->
 
         </div>
 
 
         <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-        <script src="assets/js/jquery-3.6.0.min.js"></script>
+        <script src="../assets/js/jquery-3.6.0.min.js"></script>
 
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-        <script src="assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
-        <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
+        <script src="../assets/plugins/theia-sticky-sidebar/ResizeSensor.js"></script>
+        <script src="../assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>
 
-        <script src="assets/js/script.js"></script>
+        <script src="../assets/js/script.js"></script>
 
         <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 

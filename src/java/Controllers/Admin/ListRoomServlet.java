@@ -67,7 +67,7 @@ public class ListRoomServlet extends HttpServlet {
         request.setAttribute("totalRooms", rooms.size());
 
         // Forward to listrooms.jsp
-        RequestDispatcher dispatcher = request.getRequestDispatcher("listrooms.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("rooms.jsp");
         dispatcher.forward(request, response);
     }
 

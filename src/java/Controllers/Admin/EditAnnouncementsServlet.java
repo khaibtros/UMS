@@ -86,8 +86,6 @@ public class EditAnnouncementsServlet extends HttpServlet {
 
                         response.sendRedirect("announcements");
                 } catch (Exception e) {
-                        e.printStackTrace(); // Hoặc log lỗi
-                        response.sendRedirect("error.jsp");
                 }
         }
 
