@@ -29,164 +29,164 @@
             <!--End of header-->
 
             <!--Admin user start-->
-            <%--<c:if test="${users.roleId == 1}">--%>
-            <div class="breadcrumb-bar">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 col-12">
-                            <h2 class="breadcrumb-title">Edit Announcement</h2>
+            <c:if test="${users.roleId == 1}">
+                <div class="breadcrumb-bar">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 col-12">
+                                <h2 class="breadcrumb-title">Edit Announcement</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
 
-                        <!--Admin sidebar start-->
-                        <%@include file="adminsidebar.jsp" %>
-                        <!--Admin sidebar end-->
+                            <!--Admin sidebar start-->
+                            <%@include file="adminsidebar.jsp" %>
+                            <!--Admin sidebar end-->
 
-                        <div class="col-md-7 col-lg-8 col-xl-9">
+                            <div class="col-md-7 col-lg-8 col-xl-9">
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h4 class="mb-4">Announcements</h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4 class="mb-4">Announcements</h4>
 
-                                    <!--add faq start-->
-                                    <button onclick="showAddForm()" type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-success">Add Announcement</button>
-                                    <!-- addForm start here -->
-                                    <div id="addFormContainer" style="display: none;">
-                                        <div class="card card-form">
-                                            <div class="card-body">
-                                                <h4 class="card-title">Add Announcement</h4>
-                                                <form action="addannouncement" method="POST">
-                                                    <!-- Form fields -->
-                                                    <div class="form-group">
-                                                        <label>AnnouncementID:</label>
-                                                        <input type="number" class="form-control" name="announcementId" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>AdminID:</label>
-                                                        <select class="form-control" name="adminId" >
-                                                            <option value="1" >1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                        </select>
-                                                    </div>
-                                                    <!-- Title -->
-                                                    <div class="form-group">
-                                                        <label>Title:</label>
-                                                        <input type="text" class="form-control" name="title" required>
-                                                    </div>
-                                                    <!-- Content -->
-                                                    <div class="form-group">
-                                                        <label>Content:</label>
-                                                        <textarea class="form-control" name="content" rows="5" required></textarea>
-                                                    </div>
-                                                    <!-- DatePosted -->
-                                                    <div class="form-group">
-                                                        <label>Date Posted:</label>
-                                                        <input type="date" class="form-control" name="datePosted">
-                                                    </div>
+                                        <!--add faq start-->
+                                        <button onclick="showAddForm()" type="button" data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-success">Add Announcement</button>
+                                        <!-- addForm start here -->
+                                        <div id="addFormContainer" style="display: none;">
+                                            <div class="card card-form">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Add Announcement</h4>
+                                                    <form action="addannouncement" method="POST">
+                                                        <!-- Form fields -->
+                                                        <div class="form-group">
+                                                            <label>AnnouncementID:</label>
+                                                            <input type="number" class="form-control" name="announcementId" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>AdminID:</label>
+                                                            <select class="form-control" name="adminId" >
+                                                                <option value="1" >1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- Title -->
+                                                        <div class="form-group">
+                                                            <label>Title:</label>
+                                                            <input type="text" class="form-control" name="title" required>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="form-group">
+                                                            <label>Content:</label>
+                                                            <textarea class="form-control" name="content" rows="5" required></textarea>
+                                                        </div>
+                                                        <!-- DatePosted -->
+                                                        <div class="form-group">
+                                                            <label>Date Posted:</label>
+                                                            <input type="date" class="form-control" name="datePosted">
+                                                        </div>
 
-                                                    <input type="hidden" name="action" value="add">
-                                                    <button type="submit" class="btn btn-primary">Save</button>
-                                                    <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
-                                                </form>
+                                                        <input type="hidden" name="action" value="add">
+                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                        <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- addForm end here -->
+                                    <!-- addForm end here -->
 
-                                <!--table start-->
-                                <div class="card card-table">
-                                    <div class="card-body">
-                                        <div class="table-responsive">
+                                    <!--table start-->
+                                    <div class="card card-table">
+                                        <div class="card-body">
+                                            <div class="table-responsive">
 
-                                            <table style="border-collapse: collapse; width: 100%;" class="table table-hover table-center">
-                                                <thead>
-                                                    <tr>
-                                                        <th style="width: 10px;">Title</th>
-                                                        <th style="width: 250px;">Content</th>
-                                                        <th style="width: 20px;">Date Posted</th>
-                                                        <th style="width: 100px;">ACTION</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <c:forEach items="${listAnnouncement}" var="announcement">
+                                                <table style="border-collapse: collapse; width: 100%;" class="table table-hover table-center">
+                                                    <thead>
                                                         <tr>
-                                                            <td style="width: 10px; white-space: pre-wrap;">${announcement.title}</td>
-                                                            <td style="width: 250px; white-space: pre-wrap;">${announcement.content}</td>
-                                                            <td style="width: 20px; white-space: pre-wrap;">${announcement.datePosted}</td>
-                                                            <td style="width: 100px;">
-                                                                <button class="btn btn-primary" onclick="toggleEditForm(this)">Edit</button>
-                                                                <button onclick="doDelete(${announcement.announcementID})" class="btn btn-danger">Delete</button>
-                                                            </td>
+                                                            <th style="width: 10px;">Title</th>
+                                                            <th style="width: 250px;">Content</th>
+                                                            <th style="width: 20px;">Date Posted</th>
+                                                            <th style="width: 100px;">ACTION</th>
                                                         </tr>
-                                                        <%-- Hidden row for the edit form start--%>
-                                                        <tr class="edit-row" style="display: none;">
-                                                            <td colspan="4">
-                                                                <form action="editannouncement" method="POST">
-                                                                    <input type="hidden" name="announcementId" value="${announcement.announcementID}">
+                                                    </thead>
+                                                    <tbody>
+                                                        <c:forEach items="${listAnnouncement}" var="announcement">
+                                                            <tr>
+                                                                <td style="width: 10px; white-space: pre-wrap;">${announcement.title}</td>
+                                                                <td style="width: 250px; white-space: pre-wrap;">${announcement.content}</td>
+                                                                <td style="width: 20px; white-space: pre-wrap;">${announcement.datePosted}</td>
+                                                                <td style="width: 100px;">
+                                                                    <button class="btn btn-primary" onclick="toggleEditForm(this)">Edit</button>
+                                                                    <button onclick="doDelete(${announcement.announcementID})" class="btn btn-danger">Delete</button>
+                                                                </td>
+                                                            </tr>
+                                                            <%-- Hidden row for the edit form start--%>
+                                                            <tr class="edit-row" style="display: none;">
+                                                                <td colspan="4">
+                                                                    <form action="editannouncement" method="POST">
+                                                                        <input type="hidden" name="announcementId" value="${announcement.announcementID}">
 
-                                                                    <!-- AdminID -->
-                                                                    <div class="form-group">
-                                                                        <label>AdminID:</label>
-                                                                        <select class="form-control" name="adminId">
-                                                                            <option value="1" ${announcement.adminID == 1 ? "selected" : ""}>1</option>
-                                                                            <option value="2" ${announcement.adminID == 2 ? "selected" : ""}>2</option>
-                                                                            <option value="3" ${announcement.adminID == 3 ? "selected" : ""}>3</option>
-                                                                        </select>
-                                                                    </div>
+                                                                        <!-- AdminID -->
+                                                                        <div class="form-group">
+                                                                            <label>AdminID:</label>
+                                                                            <select class="form-control" name="adminId">
+                                                                                <option value="1" ${announcement.adminID == 1 ? "selected" : ""}>1</option>
+                                                                                <option value="2" ${announcement.adminID == 2 ? "selected" : ""}>2</option>
+                                                                                <option value="3" ${announcement.adminID == 3 ? "selected" : ""}>3</option>
+                                                                            </select>
+                                                                        </div>
 
-                                                                    <!-- Title -->
-                                                                    <div class="form-group">
-                                                                        <label>Title:</label>
-                                                                        <input type="text" class="form-control" name="title" value="${announcement.title}" required>
-                                                                    </div>
+                                                                        <!-- Title -->
+                                                                        <div class="form-group">
+                                                                            <label>Title:</label>
+                                                                            <input type="text" class="form-control" name="title" value="${announcement.title}" required>
+                                                                        </div>
 
-                                                                    <!-- Content -->
-                                                                    <div class="form-group">
-                                                                        <label>Content:</label>
-                                                                        <textarea class="form-control" name="content" rows="5" required>${announcement.content}</textarea>
-                                                                    </div>
+                                                                        <!-- Content -->
+                                                                        <div class="form-group">
+                                                                            <label>Content:</label>
+                                                                            <textarea class="form-control" name="content" rows="5" required>${announcement.content}</textarea>
+                                                                        </div>
 
-                                                                    <!-- DatePosted -->
-                                                                    <div class="form-group">
-                                                                        <label>Date Posted:</label>
-                                                                        <input type="date" class="form-control" name="datePosted" 
-                                                                               value="${announcement.datePosted}">
-                                                                    </div>
+                                                                        <!-- DatePosted -->
+                                                                        <div class="form-group">
+                                                                            <label>Date Posted:</label>
+                                                                            <input type="date" class="form-control" name="datePosted" 
+                                                                                   value="${announcement.datePosted}">
+                                                                        </div>
 
-                                                                    <input type="hidden" name="action" value="edit">
-                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                    </c:forEach>
-                                                </tbody>
-                                            </table>
+                                                                        <input type="hidden" name="action" value="edit">
+                                                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
+                                                        </c:forEach>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!--table end-->
+                                    <!--table end-->
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <%--</c:if>--%>
+        </c:if>
         <!--Admin user end-->
 
         <!--not admin start-->
-        <%--<c:if test="${!empty users && users.roleId != 1}">--%>
-        <%--<%@include file="accessdenied.jsp" %>--%>
-        <%--</c:if>--%>
+        <c:if test="${!empty users && users.roleId != 1}">
+            <%@include file="../accessdenied.jsp" %>
+        </c:if>
         <!--not admin end-->
 
         <!-- end of Pre footer -->
@@ -197,15 +197,15 @@
 
 
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
 
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
 
-    <script src="assets/plugins/aos/aos.js"></script>
+    <script src="../assets/plugins/aos/aos.js"></script>
 
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script type="text/javascript">
                                                                     // prompt if you want to delete
                                                                     function doDelete(id) {

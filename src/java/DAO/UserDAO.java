@@ -35,10 +35,9 @@ public class UserDAO extends DBContext {
                         rs = ps.executeQuery();
 
                         if (rs.next()) {
-                                String hashedPasswordFromDB = rs.getString("password");
-                                String hashedInputPassword = md5Hash(password); // Hash mật khẩu nhập vào
+                                String passwordFromDB = rs.getString("password");
 
-                                if (hashedInputPassword.equalsIgnoreCase(hashedPasswordFromDB)) {
+                                if (passwordFromDB.equals(password)) {
                                         return new User(
                                                 rs.getInt("userId"),
                                                 rs.getString("email"),

@@ -33,39 +33,6 @@
                                 <a href="home">Home <i class="fas"></i></a>
                             </li>
 
-                            <c:if test="${users.roleId == 2 || users.roleId == 1}">
-                                <li class="has-submenu">
-                                    <a href>Mentor <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="mentordashboard">Mentor Dashboard</a></li>
-                                        <li><a href="mentornotifications">Notification</a></li>
-                                        <li><a href="mentor-booking">View Booking</a></li>
-                                        <li><a href="feedback">Feedback</a></li>
-                                        <li><a href="listinvoice">Invoices</a></li>
-                                        <li><a href="mentor-profile?go=edit-profile">Profile Settings</a></li>                                        
-
-                                    </ul>
-                                </li>
-                            </c:if>
-                            <c:if test="${users.roleId==3 || users.roleId == 2 || users.roleId == 1}">
-
-                                <li class="has-submenu">
-                                    <a href>Mentee <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="menteedashboard">Mentee Dashboard</a></li>
-                                        <li><a href="menteenotification">Notification</a></li>
-                                        <li><a href="mentee-bookings">Booking</a></li>
-                                        <li><a href="favourite">Favourites</a></li>
-                                        
-                                        <li><a href="mentee-profile?go=edit-profile">Profile Settings</a></li>
-                                            <c:if test="${users.roleId != 2}">
-                                            <li><a href="mentorregister">Mentor Register</a></li>
-                                            </c:if>
-
-
-                                    </ul>
-                                </li>
-                            </c:if>
                             <li class="has-submenu">
                                 <a href='search?searchTxt='>Search mentor <i class="fas"></i></a>
 
@@ -95,29 +62,29 @@
                     </div>
 
                     <!-- login header -->
-                    <c:if test="${not empty users.fName}">
+                    <c:if test="${not empty users.userId}">
                         <ul class="nav header-navbar-rht">
                             <li class="nav-item dropdown nav has-arrow logged-item header-navbar-rht">
                                 <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                                     <span class="user-img">
-                                        <img class="rounded-circle" src="assets/images/users/${users.userId}.png" width="31" onerror=this.src="assets/images/users/default.png">
+                                        <img class="rounded-circle" src="assets/images/users/${users.userId}.png" width="31" onerror=this.src="../assets/images/users/${users.userId}.png">
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
                                     <div class="user-header">
                                         <div class="avatar avatar-sm">
                                             <img src="assets/images/users/${users.userId}.png" alt="User Image"
-                                                 class="avatar-img rounded-circle" onerror=this.src="assets/images/users/default.png">
+                                                 class="avatar-img rounded-circle" onerror=this.src="../assets/images/users/${users.userId}.png">
                                         </div>
                                         <div class="user-text">
-                                            <h6>${users.lName} ${users.fName}</h6>
-                                            <p class="text-muted mb-0"><c:if test="${users.roleId == 1}">Admin</c:if><c:if test="${users.roleId == 2}">Mentor</c:if><c:if test="${users.roleId == 3}">Mentee</c:if></p>
+                                        
+                                            <p class="text-muted mb-0"><c:if test="${users.roleId == 1}">Admin</c:if><c:if test="${users.roleId == 2}">Student</c:if><c:if test="${users.roleId == 3}">Instructor</c:if></p>
                                             </div>
                                         </div>
 
-                                        <a class="dropdown-item" href="general-profile?go=edit-profile&user-id">Profile Settings</a>
-                                        <a class="dropdown-item" href="changepassword.jsp">Change Password</a>
-                                        <a class="dropdown-item" href="logout">Logout</a>
+<!--                                        <a class="dropdown-item" href="/ums/general-profile?go=edit-profile&user-id">Profile Settings</a>-->
+                                        <a class="dropdown-item" href="/ums/changepassword.jsp">Change Password</a>
+                                        <a class="dropdown-item" href="/ums/logout">Logout</a>
                                     </div>
                                 </li>
 
@@ -127,16 +94,15 @@
 
 
                     <!-- default header -->
-                    <c:if test="${empty users.fName}">
+                    <c:if test="${empty users.userId}">
                         <ul class="nav header-navbar-rht">
 
                             <li class="nav-item">
-                                <a class="nav-link" href="login">Login</a>
+                                <a class="nav-link header-login" href="/ums/login">Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link header-login" href="register">Register</a>
-                            </li>
-
+<!--                            <li class="nav-item">
+                                <a class="nav-link header-login" href="logout">Logout</a>
+                            </li>-->
                         </ul>
                     </c:if>
                     <!-- end of default header -->
