@@ -108,8 +108,6 @@
                         </div>
                         </c:forEach>
 
-                   
-
                         <div class="load-more text-center">
                         <button class="btn btn-primary btn-sm load-more-button">Load More</button>
                         </div>

@@ -1,67 +1,92 @@
 package Models;
 
 public class Grade {
-    private int gradeID;
-    private int enrollmentID;
-    private double assignment;
-    private double midterm;
-    private double finalExam;
-    private double total;
 
-    public Grade(int gradeID, int enrollmentID, double assignment, double midterm, double finalExam, double total) {
-        this.gradeID = gradeID;
-        this.enrollmentID = enrollmentID;
-        this.assignment = assignment;
-        this.midterm = midterm;
-        this.finalExam = finalExam;
-        this.total = total;
-    }
+        private int gradeID;
+        private int enrollmentID;
+        private int studentID;
+        private String courseName;
+        private double assignment;
+        private double midterm;
+        private double finalExam;
+        private double total;
 
-    public int getGradeID() {
-        return gradeID;
-    }
+        public Grade() {
+        }
 
-    public void setGradeID(int gradeID) {
-        this.gradeID = gradeID;
-    }
+        public Grade(int gradeID, int enrollmentID, int studentID, String courseName, double assignment, double midterm, double finalExam, double total) {
+                this.gradeID = gradeID;
+                this.enrollmentID = enrollmentID;
+                this.studentID = studentID;
+                this.courseName = courseName;
+                this.assignment = assignment;
+                this.midterm = midterm;
+                this.finalExam = finalExam;
+                this.total = total;
+        }
 
-    public int getEnrollmentID() {
-        return enrollmentID;
-    }
+        public int getGradeID() {
+                return gradeID;
+        }
 
-    public void setEnrollmentID(int enrollmentID) {
-        this.enrollmentID = enrollmentID;
-    }
+        public void setGradeID(int gradeID) {
+                this.gradeID = gradeID;
+        }
 
-    public double getAssignment() {
-        return assignment;
-    }
+        public int getEnrollmentID() {
+                return enrollmentID;
+        }
 
-    public void setAssignment(double assignment) {
-        this.assignment = assignment;
-    }
+        public void setEnrollmentID(int enrollmentID) {
+                this.enrollmentID = enrollmentID;
+        }
 
-    public double getMidterm() {
-        return midterm;
-    }
+        public int getStudentID() {
+                return studentID;
+        }
 
-    public void setMidterm(double midterm) {
-        this.midterm = midterm;
-    }
+        public void setStudentID(int studentID) {
+                this.studentID = studentID;
+        }
 
-    public double getFinalExam() {
-        return finalExam;
-    }
+        public String getCourseName() {
+                return courseName;
+        }
 
-    public void setFinalExam(double finalExam) {
-        this.finalExam = finalExam;
-    }
+        public void setCourseName(String courseName) {
+                this.courseName = courseName;
+        }
 
-    public double getTotal() {
-        return total;
-    }
+        public double getAssignment() {
+                return assignment;
+        }
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
+        public void setAssignment(double assignment) {
+                this.assignment = assignment;
+        }
+
+        public double getMidterm() {
+                return midterm;
+        }
+
+        public void setMidterm(double midterm) {
+                this.midterm = midterm;
+        }
+
+        public double getFinalExam() {
+                return finalExam;
+        }
+
+        public void setFinalExam(double finalExam) {
+                this.finalExam = finalExam;
+        }
+
+        public double getTotal() {
+                return total;
+        }
+
+        public void setTotal(double total) {
+                this.total = total;
+        }
+
 }
