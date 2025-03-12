@@ -15,13 +15,13 @@
                                 <span></span>
                             </span>
                         </a>
-                        <a href="home" class="navbar-brand logo">
+                        <a href="${pageContext.request.contextPath}/home" class="navbar-brand logo">
                             <img src="assets/img/logo.png" class="img-fluid" alt="Not Found" onerror=this.src="../assets/img/logo.png">
                         </a>
                     </div>
                     <div class="main-menu-wrapper">
                         <div class="menu-header">
-                            <a href="/home" class="menu-logo">
+                            <a href="${pageContext.request.contextPath}/home" class="menu-logo">
                                 <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                             </a>
                             <a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -30,30 +30,40 @@
                         </div>
                         <ul class="main-nav">
                             <li class="has-submenu">
-                                <a href="home">Home <i class="fas"></i></a>
+                                <a href="${pageContext.request.contextPath}/home">Home <i class="fas"></i></a>
                             </li>
 
-                            <li class="has-submenu">
-                                <a href='search?searchTxt='>Search mentor <i class="fas"></i></a>
+                            <!--                            <li class="has-submenu">
+                                                            <a href='search?searchTxt='>Search mentor <i class="fas"></i></a>
+                            
+                                                        </li>
+                                                        <li class="has-submenu">
+                                                            <a href="listchat">Chat <i class="fas "></i></a>
+                                                        </li>
+                                                        <li class="has-submenu">
+                                                            <a href="contactus">Contact Us <i class="fas "></i></a>
+                                                        </li>
+                                                        <li class="has-submenu">
+                                                            <a href="faq">FAQ <i class="fas "></i></a>
+                                                        </li>-->
 
-                            </li>
-                            <li class="has-submenu">
-                                <a href="listchat">Chat <i class="fas "></i></a>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="contactus">Contact Us <i class="fas "></i></a>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="faq">FAQ <i class="fas "></i></a>
-                            </li>
-
-                            <!--Admin button-->
+                            <!--Admin, student, instructor dashboard button-->
                             <c:if test="${users.roleId == 1}">
                                 <li>
-                                    <a href="admindashboard" target="">Admin</a>
+                                    <a href="admindashboard" target="">Admin Dashboard</a>
                                 </li>
                             </c:if>
-                            <!--end of Admin button-->
+                            <c:if test="${users.roleId == 2}">
+                                <li>
+                                    <a href="studentdashboard" target="">Student Dashboard</a>
+                                </li>
+                            </c:if>
+                            <c:if test="${users.roleId == 3}">
+                                <li>
+                                    <a href="instructordashboard" target="">Instructor Dashboard</a>
+                                </li>
+                            </c:if>
+                            <!--end of  button-->
 
                             <li class="login-link">
                                 <a href="login">Login / Signup</a>
@@ -77,14 +87,14 @@
                                                  class="avatar-img rounded-circle" onerror=this.src="../assets/images/users/${users.userId}.png">
                                         </div>
                                         <div class="user-text">
-                                        
+
                                             <p class="text-muted mb-0"><c:if test="${users.roleId == 1}">Admin</c:if><c:if test="${users.roleId == 2}">Student</c:if><c:if test="${users.roleId == 3}">Instructor</c:if></p>
                                             </div>
                                         </div>
 
-<!--                                        <a class="dropdown-item" href="/ums/general-profile?go=edit-profile&user-id">Profile Settings</a>-->
-                                        <a class="dropdown-item" href="/ums/changepassword.jsp">Change Password</a>
-                                        <a class="dropdown-item" href="/ums/logout">Logout</a>
+                                        <!--                                        <a class="dropdown-item" href="/ums/general-profile?go=edit-profile&user-id">Profile Settings</a>-->
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/changepassword.jsp">Change Password</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Logout</a>
                                     </div>
                                 </li>
 
@@ -100,9 +110,9 @@
                             <li class="nav-item">
                                 <a class="nav-link header-login" href="/ums/login">Login</a>
                             </li>
-<!--                            <li class="nav-item">
-                                <a class="nav-link header-login" href="logout">Logout</a>
-                            </li>-->
+                            <!--                            <li class="nav-item">
+                                                            <a class="nav-link header-login" href="logout">Logout</a>
+                                                        </li>-->
                         </ul>
                     </c:if>
                     <!-- end of default header -->
