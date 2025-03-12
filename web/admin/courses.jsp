@@ -25,76 +25,82 @@
         <div class="main-wrapper">
 
             <%@include file="../header.jsp" %>
-
-            <div class="breadcrumb-bar">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 col-12">
-                            <h2 class="breadcrumb-title">List of Courses</h2>
+            <c:if test="${users.roleId == 1}">
+                <div class="breadcrumb-bar">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 col-12">
+                                <h2 class="breadcrumb-title">List of Courses</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <%@include file="adminsidebar.jsp" %>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <%@include file="adminsidebar.jsp" %>
 
-                        <div class="col-md-7 col-lg-8 col-xl-9">
-                            <div class="col-md-12 col-lg-3 dash-board-list blue">
-                                <div class="dash-widget">
-                                    <div class="circle-bar">
-                                        <div class="icon-col">
-                                            <i class="fas fa-book"></i>
+                            <div class="col-md-7 col-lg-8 col-xl-9">
+                                <div class="col-md-12 col-lg-3 dash-board-list blue">
+                                    <div class="dash-widget">
+                                        <div class="circle-bar">
+                                            <div class="icon-col">
+                                                <i class="fas fa-book"></i>
+                                            </div>
+                                        </div>
+                                        <div class="dash-widget-info">
+                                            <%int totalCourses = (int) request.getAttribute("totalCourses");%>
+                                            <h3><%= totalCourses%></h3>
+                                            <h6>Courses</h6>
                                         </div>
                                     </div>
-                                    <div class="dash-widget-info">
-                                        <%int totalCourses = (int) request.getAttribute("totalCourses");%>
-                                        <h3><%= totalCourses%></h3>
-                                        <h6>Courses</h6>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="datatable table table-hover table-center align-middle mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Course ID</th>
-                                                    <th>Course Name</th>
-                                                    <th>Code</th>
-                                                    <th>Description</th>
-                                                    <th>Major ID</th>
-                                                    <th>Semester ID</th>
-                                                    <th>Fee Amount</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <c:forEach var="course" items="${listCourse}">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="datatable table table-hover table-center align-middle mb-0">
+                                                <thead>
                                                     <tr>
-                                                        <td>${course.courseID}</td>
-                                                        <td>${course.name}</td>
-                                                        <td>${course.code}</td>
-                                                        <td>${course.description}</td>
-                                                        <td>${course.majorID}</td>
-                                                        <td>${course.semesterID}</td>
-                                                        <td>${course.feeAmount}</td>
+                                                        <th>Course ID</th>
+                                                        <th>Course Name</th>
+                                                        <th>Code</th>
+                                                        <th>Description</th>
+                                                        <th>Major ID</th>
+                                                        <th>Semester ID</th>
+                                                        <th>Fee Amount</th>
                                                     </tr>
-                                                </c:forEach>
-                                            </tbody>
-                                        </table>
+                                                </thead>
+
+                                                <tbody>
+                                                    <c:forEach var="course" items="${listCourse}">
+                                                        <tr>
+                                                            <td>${course.courseID}</td>
+                                                            <td>${course.name}</td>
+                                                            <td>${course.code}</td>
+                                                            <td>${course.description}</td>
+                                                            <td>${course.majorID}</td>
+                                                            <td>${course.semesterID}</td>
+                                                            <td>${course.feeAmount}</td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="pagination justify-content-center">
+                                    <div class="pagination justify-content-center">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </c:if>
 
+                <!--not admin start-->
+                <c:if test="${users.roleId != 1 || empty users}">
+                    <%@include file="accessdenied.jsp" %>
+                </c:if>
+                <!--not admin end-->
                 <%@include file="../footer.jsp" %>
             </div>
 

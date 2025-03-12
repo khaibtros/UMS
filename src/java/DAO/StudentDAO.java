@@ -53,6 +53,37 @@ public class StudentDAO {
                 return lstStudent;
         }
 
+        public Student getStudentByUserId(int userId) {
+                DBContext db = new DBContext();
+                try {
+                        conn = db.getConnection();
+                        String sql = "SELECT * FROM Student WHERE userId = ?";
+                        ps = conn.prepareStatement(sql);
+                        ps.setInt(1, userId);
+                        rs = ps.executeQuery();
+                        if (rs.next()) {
+                                int id = rs.getInt("StudentID");
+                                String fn = rs.getString("FirstName");
+                                String ln = rs.getString("LastName");
+                                String ph = rs.getString("Phone");
+                                String addr = rs.getString("Address");
+                                Date dob = rs.getDate("DOB");
+                                String gen = rs.getString("Gender");
+                                int mjID = rs.getInt("MajorID");
+                                Date sd = rs.getDate("StartDate");
+                                Date gd = rs.getDate("GraduatedDate");
+                                String gn = rs.getString("GuardianName");
+                                String gp = rs.getString("GuardianPhone");
+
+                                return new Student(id, userId, fn, ln, ph, addr, dob, gen, mjID, sd, gd, gn, gp);
+                        }
+                        conn.close();
+                } catch (Exception ex) {
+                        Logger.getLogger(StudentDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return null;
+        }
+
         public void deleteStudent(String stdId) {
                 DBContext db = new DBContext();
                 try {

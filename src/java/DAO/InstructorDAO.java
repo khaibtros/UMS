@@ -40,7 +40,7 @@ public class InstructorDAO {
                                 String status = rs.getString("Status");
 
                                 Instructor x = new Instructor(
-                                        id, userId,fn, ln, ph, addr,
+                                        id, userId, fn, ln, ph, addr,
                                         dob, gen, salary, hireDate, endDate, status
                                 );
                                 lstInstructor.add(x);
@@ -51,6 +51,36 @@ public class InstructorDAO {
                         Logger.getLogger(InstructorDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 return lstInstructor;
+        }
+
+        public Instructor getInstructorByUserId(int userId) {
+                DBContext db = new DBContext();
+                try {
+                        conn = db.getConnection();
+                        String sql = "SELECT * FROM Instructor WHERE userId = ?";
+                        ps = conn.prepareStatement(sql);
+                        ps.setInt(1, userId);
+                        rs = ps.executeQuery();
+                        if (rs.next()) {
+                                int id = rs.getInt("InstructorID");
+                                String fn = rs.getString("FirstName");
+                                String ln = rs.getString("LastName");
+                                String ph = rs.getString("Phone");
+                                String addr = rs.getString("Address");
+                                Date dob = rs.getDate("DOB");
+                                String gen = rs.getString("Gender");
+                                double salary = rs.getDouble("Salary");
+                                Date hireDate = rs.getDate("HireDate");
+                                Date endDate = rs.getDate("EndDate");
+                                String status = rs.getString("Status");
+
+                                return new Instructor(id, userId, fn, ln, ph, addr, dob, gen, salary, hireDate, endDate, status);
+                        }
+                        conn.close();
+                } catch (Exception ex) {
+                        Logger.getLogger(InstructorDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return null;
         }
 
         public List<Course> getAllCoursesByInstructorId(int instructorId) {
