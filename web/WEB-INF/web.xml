@@ -88,6 +88,14 @@
         <servlet-name>ListGradesServlet</servlet-name>
         <servlet-class>Controllers.Instructor.ListGradesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListFullAnnouncementServlet</servlet-name>
+        <servlet-class>Controllers.Instructor.ListFullAnnouncementServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListLessonInSemester</servlet-name>
+        <servlet-class>Controllers.Instructor.ListLessonInSemester</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -175,6 +183,14 @@
     <servlet-mapping>
         <servlet-name>ListGradesServlet</servlet-name>
         <url-pattern>/instructor/grades</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListFullAnnouncementServlet</servlet-name>
+        <url-pattern>/ListFullAnnouncementServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListLessonInSemester</servlet-name>
+        <url-pattern>/ListLessonInSemester</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
