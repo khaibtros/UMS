@@ -140,6 +140,22 @@
         <servlet-name>ListRoomsStudentServlet</servlet-name>
         <servlet-class>Controllers.Student.ListRoomsStudentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListCoursesInstructorServlet</servlet-name>
+        <servlet-class>Controllers.Instructor.ListCoursesInstructorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListCoursesStudentServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListCoursesStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListClassesInstructorServlet</servlet-name>
+        <servlet-class>Controllers.Instructor.ListClassesInstructorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListClassesStudentServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListClassesStudentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -279,6 +295,22 @@
     <servlet-mapping>
         <servlet-name>ListRoomsStudentServlet</servlet-name>
         <url-pattern>/student/rooms</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListCoursesInstructorServlet</servlet-name>
+        <url-pattern>/instructor/courses</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListCoursesStudentServlet</servlet-name>
+        <url-pattern>/student/courses</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListClassesInstructorServlet</servlet-name>
+        <url-pattern>/instructor/classes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListClassesStudentServlet</servlet-name>
+        <url-pattern>/student/classes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -43,6 +43,64 @@ public class CourseDAO {
                 return lstCourse;
         }
 
+        public List<Course> getCoursesByInstructorId(int instructorId) {
+                List<Course> courses = new ArrayList<>();
+                String sql = "SELECT c.CourseID, c.Name, c.Code, c.Description, c.MajorID, c.SemesterID, c.FeeAmount "
+                        + "FROM Course c "
+                        + "JOIN CourseInstructor ci ON c.CourseID = ci.CourseID "
+                        + "WHERE ci.InstructorID = ?";
+
+                try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                        ps.setInt(1, instructorId);
+                        try (ResultSet rs = ps.executeQuery()) {
+                                while (rs.next()) {
+                                        courses.add(new Course(
+                                                rs.getInt("CourseID"),
+                                                rs.getString("Name"),
+                                                rs.getString("Code"),
+                                                rs.getString("Description"),
+                                                rs.getInt("MajorID"),
+                                                rs.getInt("SemesterID"),
+                                                rs.getDouble("FeeAmount")
+                                        ));
+                                }
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, "Error fetching courses by instructor ID", ex);
+                }
+                return courses;
+        }
+
+        public List<Course> getCoursesByStudentId(int studentId) {
+                List<Course> courses = new ArrayList<>();
+                String sql = "SELECT c.CourseID, c.Name, c.Code, c.Description, c.MajorID, c.SemesterID, c.FeeAmount "
+                        + "FROM Course c "
+                        + "JOIN Enrollment e ON c.CourseID = e.CourseID "
+                        + "WHERE e.StudentID = ?";
+
+                try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                        ps.setInt(1, studentId);
+                        try (ResultSet rs = ps.executeQuery()) {
+                                while (rs.next()) {
+                                        courses.add(new Course(
+                                                rs.getInt("CourseID"),
+                                                rs.getString("Name"),
+                                                rs.getString("Code"),
+                                                rs.getString("Description"),
+                                                rs.getInt("MajorID"),
+                                                rs.getInt("SemesterID"),
+                                                rs.getDouble("FeeAmount")
+                                        ));
+                                }
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, "Error fetching courses by student ID", ex);
+                }
+                return courses;
+        }
+
         // Add a new course
         public void addCourse(String courseId, String courseName, String courseCode, String courseDescription,
                 String semesterId, String feeAmount) {

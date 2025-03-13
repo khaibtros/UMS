@@ -75,7 +75,6 @@
                                                         <th>Room Name</th>
                                                         <th>Type</th>
                                                         <th>Capacity</th>
-                                                        <th>Status</th>
                                                     </tr>
                                                 </thead>
 
@@ -86,7 +85,6 @@
                                                         <td>${roomItem.name}</td>
                                                         <td>${roomItem.type}</td>
                                                         <td>${roomItem.capacity}</td>
-                                                        <td>${roomItem.status}</td>
                                                     </tr>
                                                 </c:forEach>
                                                 </tbody>

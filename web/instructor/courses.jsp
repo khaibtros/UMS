@@ -1,19 +1,13 @@
-<%-- 
-    Document   : listrooms
-    Created on : Mar 9, 2025, 2:30:15 PM
-    Author     : ManhTD
---%>
-
-<%@page import="Models.Room"%>
+<%@page import="Models.Course"%>
 <%@page import="java.util.List"%>
-<%@page import="DAO.RoomDAO"%>
+<%@page import="DAO.CourseDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
-        <title>List Rooms</title>
+        <title>List Courses</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
         <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
@@ -30,16 +24,13 @@
 
         <div class="main-wrapper">
 
-            <!--Admin user start-->
-
             <%@include file="../header.jsp" %>
-
-            <c:if test="${users.roleId == 1}">
+            <c:if test="${users.roleId == 3}">
                 <div class="breadcrumb-bar">
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col-md-12 col-12">
-                                <h2 class="breadcrumb-title">List of Rooms</h2>
+                                <h2 class="breadcrumb-title">List of Courses</h2>
                             </div>
                         </div>
                     </div>
@@ -48,20 +39,20 @@
                 <div class="content">
                     <div class="container-fluid">
                         <div class="row">
-                            <%@include file="adminsidebar.jsp" %>
+                            <%@include file="instructorsidebar.jsp" %>
 
                             <div class="col-md-7 col-lg-8 col-xl-9">
                                 <div class="col-md-12 col-lg-3 dash-board-list blue">
                                     <div class="dash-widget">
                                         <div class="circle-bar">
                                             <div class="icon-col">
-                                                <i class="fas fa-door-open"></i>
+                                                <i class="fas fa-book"></i>
                                             </div>
                                         </div>
                                         <div class="dash-widget-info">
-                                            <%int totalRooms = (int) request.getAttribute("totalRooms");%>
-                                            <h3><%= totalRooms%></h3>
-                                            <h6>Rooms</h6>
+                                            <%int totalCourses = (int) request.getAttribute("totalCourses");%>
+                                            <h3><%= totalCourses%></h3>
+                                            <h6>Courses</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -71,22 +62,28 @@
                                             <table class="datatable table table-hover table-center align-middle mb-0">
                                                 <thead>
                                                     <tr>
-                                                        <th>Room ID</th>
-                                                        <th>Room Name</th>
-                                                        <th>Type</th>
-                                                        <th>Capacity</th>
+                                                        <th>Course ID</th>
+                                                        <th>Course Name</th>
+                                                        <th>Code</th>
+                                                        <th>Description</th>
+                                                        <th>Major ID</th>
+                                                        <th>Semester ID</th>
+                                                        <th>Fee Amount</th>
                                                     </tr>
                                                 </thead>
 
                                                 <tbody>
-                                                <c:forEach var="roomItem" items="${listRoom}">
-                                                    <tr>
-                                                        <td>${roomItem.roomID}</td>
-                                                        <td>${roomItem.name}</td>
-                                                        <td>${roomItem.type}</td>
-                                                        <td>${roomItem.capacity}</td>
-                                                    </tr>
-                                                </c:forEach>
+                                                    <c:forEach var="course" items="${listCourse}">
+                                                        <tr>
+                                                            <td>${course.courseID}</td>
+                                                            <td>${course.name}</td>
+                                                            <td>${course.code}</td>
+                                                            <td>${course.description}</td>
+                                                            <td>${course.majorID}</td>
+                                                            <td>${course.semesterID}</td>
+                                                            <td>${course.feeAmount}</td>
+                                                        </tr>
+                                                    </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -97,24 +94,23 @@
                             </div>
                         </div>
                     </div>
-            </c:if>
-            <!--Admin user end-->
+                </c:if>
 
-            <!--not admin start-->
-            <c:if test="${users.roleId != 1 || empty users}">
-                <%@include file="../accessdenied.jsp" %>
-            </c:if>
+                <!--not admin start-->
+                <c:if test="${users.roleId != 3 || empty users}">
+                    <%@include file="../accessdenied.jsp" %>
+                </c:if>
+                <!--not admin end-->
+                <%@include file="../footer.jsp" %>
+            </div>
 
-            <%@include file="../footer.jsp" %>
-        </div>
-
-        <script src="../assets/js/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../assets/js/feather.min.js"></script>
-        <script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="../assets/plugins/datatables/datatables.min.js"></script>
-        <script src="../assets/js/script.js"></script>
+            <script src="../assets/js/jquery-3.6.0.min.js"></script>
+            <script src="../assets/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/js/feather.min.js"></script>
+            <script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+            <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="../assets/plugins/datatables/datatables.min.js"></script>
+            <script src="../assets/js/script.js"></script>
 
     </body>
 </html>

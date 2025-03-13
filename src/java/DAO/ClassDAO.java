@@ -43,6 +43,62 @@ public class ClassDAO {
                 return classList;
         }
 
+        public List<Class> getClassesByInstructorId(int instructorId) {
+                List<Class> classList = new ArrayList<>();
+                String sql = "SELECT c.ClassID, c.Name, c.MajorID, c.SemesterID, c.Capacity, c.Status "
+                        + "FROM Class c "
+                        + "JOIN ClassInstructor ci ON c.ClassID = ci.ClassID "
+                        + "WHERE ci.InstructorID = ?";
+
+                try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                        ps.setInt(1, instructorId);
+                        try (ResultSet rs = ps.executeQuery()) {
+                                while (rs.next()) {
+                                        classList.add(new Class(
+                                                rs.getInt("ClassID"),
+                                                rs.getString("Name"),
+                                                rs.getInt("MajorID"),
+                                                rs.getInt("SemesterID"),
+                                                rs.getInt("Capacity"),
+                                                rs.getString("Status")
+                                        ));
+                                }
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(ClassDAO.class.getName()).log(Level.SEVERE, "Error fetching classes by instructor ID", ex);
+                }
+                return classList;
+        }
+
+        public List<Class> getClassesByStudentId(int studentId) {
+                List<Class> classList = new ArrayList<>();
+                String sql = "SELECT c.ClassID, c.Name, c.MajorID, c.SemesterID, c.Capacity, c.Status "
+                        + "FROM Class c "
+                        + "JOIN StudentClass sc ON c.ClassID = sc.ClassID "
+                        + "WHERE sc.StudentID = ?";
+
+                try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                        ps.setInt(1, studentId);
+                        try (ResultSet rs = ps.executeQuery()) {
+                                while (rs.next()) {
+                                        classList.add(new Class(
+                                                rs.getInt("ClassID"),
+                                                rs.getString("Name"),
+                                                rs.getInt("MajorID"),
+                                                rs.getInt("SemesterID"),
+                                                rs.getInt("Capacity"),
+                                                rs.getString("Status")
+                                        ));
+                                }
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(ClassDAO.class.getName()).log(Level.SEVERE, "Error fetching classes by student ID", ex);
+                }
+                return classList;
+        }
+
         // Add a new class
         public void addNewClass(String name, int majorID, int capacity, String status) {
                 DBContext db = new DBContext();

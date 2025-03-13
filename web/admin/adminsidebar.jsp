@@ -16,29 +16,29 @@
                             <span><i class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="AdminNotificationController"><i class="fas fa-bell"></i>Admin Notification
                             <span><i class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="students"><i class="fas fa-list-alt"></i>List Students<span><i
+                    <li><a href="students"><i class="fas fa-list-alt"></i>Students<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="instructors"><i class="fas fa-list-alt"></i>List Instructors<span><i 
+                    <li><a href="instructors"><i class="fas fa-list-alt"></i>Instructors<span><i 
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="majors"><i class="fas fa-list-alt"></i>List Majors <span><i
+                    <li><a href="majors"><i class="fas fa-list-alt"></i>Majors <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="courses"><i class="fas fa-list-alt"></i>List Courses<span><i 
+                    <li><a href="courses"><i class="fas fa-list-alt"></i>Courses<span><i 
                                     class="fas fa-chevron-right"></i></span></a></li>               
                     <!--                    <li><a href="listbooking"><i class="fas fa-list-alt"></i>List Booking <span><i
                                                         class="fas fa-chevron-right"></i></span></a></li>-->
-                    <li><a href="classes"><i class="fas fa-list-alt"></i>List Classes<span><i
+                    <li><a href="classes"><i class="fas fa-list-alt"></i>Classes<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="enrollments.jsp"><i class="fas fa-list-alt"></i>List Enrollments<span><i
+                    <li><a href="enrollments.jsp"><i class="fas fa-list-alt"></i>Enrollments<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="lessons"><i class="fas fa-list-alt"></i>List Lessons<span><i
+                    <li><a href="lessons"><i class="fas fa-list-alt"></i>Lessons<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="attendances.jsp"><i class="fas fa-list-alt"></i>List Attendances<span><i
+                    <li><a href="attendances.jsp"><i class="fas fa-list-alt"></i>Attendances<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
 <!--                    <li><a href="listcategory"><i class="fas fa-list-alt"></i>List Categories <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>-->
-                    <li><a href="rooms"><i class="fas fa-list-alt"></i>List Rooms <span><i
+                    <li><a href="rooms"><i class="fas fa-list-alt"></i>Rooms<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="announcements"><i class="fas fa-list-alt"></i>List Announcements<span><i
+                    <li><a href="announcements"><i class="fas fa-list-alt"></i>Announcements<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
 <!--                    <li><a href="viewtransaction"><i class="fas fa-money-bill-alt"></i>View Transactions <span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
