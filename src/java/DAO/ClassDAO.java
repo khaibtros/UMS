@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ClassDAO {
+
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -95,5 +96,23 @@ public class ClassDAO {
                 } catch (Exception ex) {
                         Logger.getLogger(ClassDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
+        }
+
+        public String getClassNameByClassId(int classID) {
+                DBContext db = new DBContext();
+                String className = null;
+                try {
+                        conn = db.getConnection();
+                        String sql = "SELECT Name FROM Class WHERE ClassID = ?";
+                        ps = conn.prepareStatement(sql);
+                        ps.setInt(1, classID);
+                        rs = ps.executeQuery();
+                        if (rs.next()) {
+                                className = rs.getString("Name");
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(ClassDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return className;
         }
 }

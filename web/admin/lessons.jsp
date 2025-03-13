@@ -116,39 +116,40 @@
                                                         <div class="form-group">
                                                             <label for="date">Select Date:</label>
                                                             <input type="date" class="form-control" name="date" required>
-                                                            <!-- Day of the Week Selection -->
-                                                            <div class="form-group">
-                                                                <label for="dayOfWeek">Day of the Week:</label>
-                                                                <select class="form-control" name="dayOfWeek" required>
-                                                                    <option value="Monday">Monday</option>
-                                                                    <option value="Tuesday">Tuesday</option>
-                                                                    <option value="Wednesday">Wednesday</option>
-                                                                    <option value="Thursday">Thursday</option>
-                                                                    <option value="Friday">Friday</option>
-                                                                </select>
-                                                            </div>
+                                                        </div>
+                                                        <!-- Day of the Week Selection -->
+                                                        <div class="form-group">
+                                                            <label for="dayOfWeek">Day of the Week:</label>
+                                                            <select class="form-control" name="dayOfWeek" required>
+                                                                <option value="Monday">Monday</option>
+                                                                <option value="Tuesday">Tuesday</option>
+                                                                <option value="Wednesday">Wednesday</option>
+                                                                <option value="Thursday">Thursday</option>
+                                                                <option value="Friday">Friday</option>
+                                                            </select>
+                                                        </div>
 
-                                                            <!-- Start Time Selection -->
-                                                            <div class="form-group">
-                                                                <label for="startTime">Start Time:</label>
-                                                                <input type="time" class="form-control" name="startTime" required>
-                                                            </div>
+                                                        <!-- Start Time Selection -->
+                                                        <div class="form-group">
+                                                            <label for="startTime">Start Time:</label>
+                                                            <input type="time" class="form-control" name="startTime" required>
+                                                        </div>
 
-                                                            <!-- End Time Selection -->
-                                                            <div class="form-group">
-                                                                <label for="endTime">End Time:</label>
-                                                                <input type="time" class="form-control" name="endTime" required>
-                                                            </div>
+                                                        <!-- End Time Selection -->
+                                                        <div class="form-group">
+                                                            <label for="endTime">End Time:</label>
+                                                            <input type="time" class="form-control" name="endTime" required>
+                                                        </div>
 
-                                                            <!-- Content Text Area -->
-                                                            <div class="form-group">
-                                                                <label for="content">Lesson Content:</label>
-                                                                <textarea class="form-control" name="content" rows="4" placeholder="Enter lesson content"></textarea>
-                                                            </div>
+                                                        <!-- Content Text Area -->
+                                                        <div class="form-group">
+                                                            <label for="content">Lesson Content:</label>
+                                                            <textarea class="form-control" name="content" rows="4" placeholder="Enter lesson content"></textarea>
+                                                        </div>
 
-                                                            <input type="hidden" name="action" value="add">
-                                                            <button type="submit" class="btn btn-primary">Save</button>
-                                                            <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
+                                                        <input type="hidden" name="action" value="add">
+                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                        <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
                                                     </form>
                                                 </div>
                                             </div>

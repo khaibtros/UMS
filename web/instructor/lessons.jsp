@@ -34,7 +34,7 @@
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col-md-12 col-12">
-                                <h2 class="breadcrumb-title">List of Announcements</h2>
+                                <h2 class="breadcrumb-title">List of Lessons</h2>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h4 class="mb-4">Announcements</h4>
+                                        <h4 class="mb-4">Lessons</h4>
                                     </div>
 
                                     <!--table start-->
@@ -63,17 +63,27 @@
                                                 <table style="border-collapse: collapse; width: 100%;" class="table table-hover table-center">
                                                     <thead>
                                                         <tr>
-                                                            <th style="width: 50px;">Title</th>
-                                                            <th style="width: 350px;">Full Content</th>
-                                                            <th style="width: 50px;">Date Posted</th>
+                                                            <th style="width: 10px;">LessonID</th>
+                                                            <th style="width: 10px;">CourseID</th>
+                                                            <th style="width: 10px;">ClassID</th>
+                                                            <th style="width: 10px;">RoomID</th>
+                                                            <th style="width: 10px;">Date</th>
+                                                            <th style="width: 10px;">DayOfWeek</th>
+                                                            <th style="width: 10px;">StartTime</th>
+                                                            <th style="width: 10px;">EndTime</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <c:forEach items="${listAnnouncement}" var="announcement">
+                                                        <c:forEach items="${listLesson}" var="lesson">
                                                             <tr>
-                                                                <td style="width: 50px; white-space: pre-wrap;">${announcement.title}</td>
-                                                                <td style="width: 350px; white-space: pre-wrap;">${announcement.content}</td>
-                                                                <td style="width: 50px; white-space: pre-wrap;">${announcement.datePosted}</td>
+                                                                <td style="width: 10px; white-space: pre-wrap;"><a href="attendances?lessonId=${lesson.lessonID}">${lesson.lessonID}</a></td>
+                                                                <td style="width: 10px;white-space: pre-wrap;">${lesson.courseID}</td>
+                                                                <td style="width: 10px; white-space: pre-wrap;">${lesson.classID}</td>
+                                                                <td style="width: 10px; white-space: pre-wrap;">${lesson.roomID}</td>
+                                                                <td style="width: 10px; white-space: pre-wrap;">${lesson.date}</td>
+                                                                <td style="width: 10px; white-space: pre-wrap;">${lesson.dayOfWeek}</td>
+                                                                <td style="width: 10px; white-space: pre-wrap;">${lesson.startTime}</td>
+                                                                <td style="width: 10px; white-space: pre-wrap;">${lesson.endTime}</td>
                                                             </tr>
                                                         </c:forEach>
                                                     </tbody>

@@ -30,7 +30,7 @@
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="enrollments.jsp"><i class="fas fa-list-alt"></i>List Enrollments<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="lessons.jsp"><i class="fas fa-list-alt"></i>List Lessons<span><i
+                    <li><a href="lessons"><i class="fas fa-list-alt"></i>List Lessons<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="attendances.jsp"><i class="fas fa-list-alt"></i>List Attendances<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>

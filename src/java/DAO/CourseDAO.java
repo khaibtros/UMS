@@ -99,4 +99,22 @@ public class CourseDAO {
                         Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
         }
+
+        public String getCourseNameByCourseId(int courseId) {
+                DBContext db = new DBContext();
+                String courseName = null;
+                try {
+                        conn = db.getConnection();
+                        String sql = "SELECT Name FROM Course WHERE CourseID = ?";
+                        ps = conn.prepareStatement(sql);
+                        ps.setInt(1, courseId);
+                        rs = ps.executeQuery();
+                        if (rs.next()) {
+                                courseName = rs.getString("CourseName");
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(CourseDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return courseName;
+        }
 }

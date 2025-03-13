@@ -201,38 +201,36 @@ public class LessonDAO {
                 }
                 return id;
         }
-        
-        public List<Lesson> getLessonsByInstructorAndSemester(int instructorId, int semesterId) {
-        List<Lesson> lessons = new ArrayList<>();
-        String sql = "SELECT * FROM Lesson WHERE InstructorID = ? AND Semester = ?";
 
-        try (Connection conn = new DBContext().getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+        public List<Lesson> getLessonsByInstructorId(int instructorId) {
+                List<Lesson> lessons = new ArrayList<>();
+                String sql = "SELECT LessonID, CourseID, ClassID, InstructorID, RoomID, Date, DayOfWeek, StartTime, EndTime, Content "
+                        + "FROM Lesson WHERE InstructorID = ? ORDER BY Date";
 
-            ps.setInt(1, instructorId);
-            ps.setInt(2, semesterId);
+                try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    Lesson lesson = new Lesson(
-                            rs.getInt("LessonID"),
-                            rs.getInt("CourseID"),
-                            rs.getInt("ClassID"),
-                            rs.getInt("InstructorID"),
-                            rs.getInt("RoomID"),
-                            rs.getDate("Date"),
-                            rs.getString("DayOfWeek"),
-                            rs.getTime("StartTime"),
-                            rs.getTime("EndTime"),
-                            rs.getString("Content")
-                    );
-                    lessons.add(lesson);
+                        ps.setInt(1, instructorId);
+
+                        try (ResultSet rs = ps.executeQuery()) {
+                                while (rs.next()) {
+                                        lessons.add(new Lesson(
+                                                rs.getInt("LessonID"),
+                                                rs.getInt("CourseID"),
+                                                rs.getInt("ClassID"),
+                                                rs.getInt("InstructorID"),
+                                                rs.getInt("RoomID"),
+                                                rs.getDate("Date"),
+                                                rs.getString("DayOfWeek"),
+                                                rs.getTime("StartTime"),
+                                                rs.getTime("EndTime"),
+                                                rs.getString("Content")
+                                        ));
+                                }
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(LessonDAO.class.getName()).log(Level.SEVERE, "Error fetching lessons by instructor ID", ex);
                 }
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
 
-        return lessons;
-    }
+                return lessons;
+        }
 }

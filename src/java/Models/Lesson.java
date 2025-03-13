@@ -27,7 +27,7 @@ public class Lesson {
                 this.endTime = endTime;
                 this.content = content;
         }
-
+        
         public int getLessonID() {
                 return lessonID;
         }
