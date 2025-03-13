@@ -109,4 +109,28 @@ public class EnrollmentDAO {
                         Logger.getLogger(EnrollmentDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
         }
+
+        public void updateStatusToNotPassed(int gradeId) {
+                DBContext db = new DBContext();
+                String sql = "UPDATE Enrollment SET Status = 'Not Passed' WHERE EnrollmentID = (SELECT EnrollmentID FROM Grade WHERE GradeID = ?)";
+
+                try (Connection conn = db.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+                        ps.setInt(1, gradeId);
+                        ps.executeUpdate();
+                } catch (Exception ex) {
+                        Logger.getLogger(EnrollmentDAO.class.getName()).log(Level.SEVERE, "Error updating enrollment status", ex);
+                }
+        }
+        
+         public void updateStatusToPassed(int gradeId) {
+                DBContext db = new DBContext();
+                String sql = "UPDATE Enrollment SET Status = 'Passed' WHERE EnrollmentID = (SELECT EnrollmentID FROM Grade WHERE GradeID = ?)";
+
+                try (Connection conn = db.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+                        ps.setInt(1, gradeId);
+                        ps.executeUpdate();
+                } catch (Exception ex) {
+                        Logger.getLogger(EnrollmentDAO.class.getName()).log(Level.SEVERE, "Error updating enrollment status", ex);
+                }
+        }
 }

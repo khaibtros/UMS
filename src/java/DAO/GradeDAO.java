@@ -109,22 +109,20 @@ public class GradeDAO {
                 }
         }
 
-        public void updateGrade(String grID, String enID, String assignment, String midterm, String finalExam, String total) {
+        public void updateGrade(int gradeId, double assignment, double midterm, double finalExam) {
                 DBContext db = new DBContext();
-                try {
-                        conn = db.getConnection();
-                        String sql = "UPDATE Grade SET EnrollmentID = ?, Assignment = ?, Midterm = ?, Final = ?, Total = ? WHERE GradeID = ?";
-                        ps = conn.prepareStatement(sql);
-                        ps.setString(1, enID);
-                        ps.setDouble(2, Double.parseDouble(assignment));
-                        ps.setDouble(3, Double.parseDouble(midterm));
-                        ps.setDouble(4, Double.parseDouble(finalExam));
-                        ps.setDouble(5, Double.parseDouble(total));
-                        ps.setString(6, grID);
+                String sql = "UPDATE Grade SET Assignment = ?, Midterm = ?, Final = ? WHERE GradeID = ?";
+
+                try (Connection conn = db.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                        ps.setDouble(1, assignment);
+                        ps.setDouble(2, midterm);
+                        ps.setDouble(3, finalExam);
+                        ps.setInt(4, gradeId); // GradeID is an int
+
                         ps.executeUpdate();
-                        conn.close();
                 } catch (Exception ex) {
-                        Logger.getLogger(GradeDAO.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(GradeDAO.class.getName()).log(Level.SEVERE, "Error updating grade", ex);
                 }
         }
 }
