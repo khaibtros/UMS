@@ -47,8 +47,6 @@
                             <%@include file="adminsidebar.jsp" %>
                             <!-- mentee side bar end -->
 
-
-
                             <div class="col-md-7 col-lg-8 col-xl-9">
                                 <div class="col-md-12 col-lg-3 dash-board-list blue">
                                     <div class="dash-widget">

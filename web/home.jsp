@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>CodeCoach</title>
+    <title>MKD University</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
@@ -40,21 +40,9 @@
             <div class="container">
                 <div class="banner-wrapper m-auto text-center aos" data-aos="fade-up">
                     <div class="banner-header">
-                        <h1>Search Mentor in <span>CodeCoach Appointment</span></h1>
-                        <p>Discover the best Mentors with your desire skills set</p>
+                        <h1><span>MKD University</span></h1>
+                        <p>Find the information you need within Our University<br>The best university in the world </p>
                     </div>
-
-                    <!--                    <div class="search-box">
-                                            <form action="search" method="post">
-                                                <div class="form-group search-info">
-                                                    <input name="searchTxt" type="text" class="form-control"
-                                                           placeholder="Search Skills, Categories, Mentor's name, etc">
-                                                </div>
-                                                <button type="submit" class="btn btn-primary search-btn"><i><img
-                                                            src="assets/img/search-submit.png" alt></i> <span>Search</span></button>
-                                            </form>
-                                        </div>-->
-
                 </div>
             </div>
         </section>
@@ -62,10 +50,9 @@
         <section class="section how-it-works">
             <div class="container">
                 <div class="section-header text-center aos" data-aos="fade-up">
-                    <span>CodeCoach Flow</span>
-                    <h2>How does it works ?</h2>
-                    <p class="sub-title">Are you looking to join online institutions? Now it's very simple, Sign up with
-                        CodeCoach</p>
+                    <span>MKD University</span>
+                    <h2>What We Offer</h2>
+                    <p class="sub-title">Join our university and explore a world of opportunities for learning and growth</p>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
@@ -76,10 +63,10 @@
                                     <i><img src="assets/img/icon-1.png" alt></i>
                                 </div>
                                 <div class="feature-cont">
-                                    <div class="feature-text">Sign up</div>
+                                    <div class="feature-text">Join Us</div>
                                 </div>
                             </div>
-                            <p class="mb-0">Are you looking to join online Learning? It's very simple
+                            <p class="mb-0">Join MKD University easily and start your learning journey today
                             </p>
                         </div>
                     </div>
@@ -91,10 +78,10 @@
                                     <i><img src="assets/img/icon-2.png" alt></i>
                                 </div>
                                 <div class="feature-cont">
-                                    <div class="feature-text">Becoming a mentor</div>
+                                    <div class="feature-text">Collaborate</div>
                                 </div>
                             </div>
-                            <p class="mb-0">Collaborate on your own timing, by register with mentor booking</p>
+                            <p class="mb-0">Work together seamlessly and turn new ideas into reality</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -105,61 +92,61 @@
                                     <i><img src="assets/img/icon-3.png" alt></i>
                                 </div>
                                 <div class="feature-cont">
-                                    <div class="feature-text">Improve & Get Back</div>
+                                    <div class="feature-text">Enhance Your Skills</div>
                                 </div>
                             </div>
-                            <p class="mb-0">You can gather different skill set, and you can become mentor too</p>
+                            <p class="mb-0">Learn new skills, improve your knowledge, and advance your career</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-    <!-- Pre footer -->
-    <section class="section statistics-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="statistics-list text-center aos" data-aos="fade-up">
-                        <span>500+</span>
-                        <h3>Happy Clients</h3>
+        <!-- Pre footer -->
+        <section class="section statistics-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="statistics-list text-center aos" data-aos="fade-up">
+                            <span>500+</span>
+                            <h3>Happy Clients</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="statistics-list text-center aos" data-aos="fade-up">
-                        <span>120+</span>
-                        <h3>Online Appointments</h3>
+                    <div class="col-12 col-md-4">
+                        <div class="statistics-list text-center aos" data-aos="fade-up">
+                            <span>50+</span>
+                            <h3>Experienced Instructors</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="statistics-list text-center aos" data-aos="fade-up">
-                        <span>100%</span>
-                        <h3>Job Satisfaction</h3>
+                    <div class="col-12 col-md-4">
+                        <div class="statistics-list text-center aos" data-aos="fade-up">
+                            <span>100+</span>
+                            <h3>Carreer Opportunities</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- end of Pre footer -->
+        </section>
+        <!-- end of Pre footer -->
 
-    <!--Content end-->
+        <!--Content end-->
 
-    <!--Footer start-->
-    <%@include file="footer.jsp" %>
-    <!-- Footer end -->
+        <!--Footer start-->
+        <%@include file="footer.jsp" %>
+        <!-- Footer end -->
 
-</div>
+    </div>
 
 
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
 
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-<script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
 
-<script src="assets/plugins/aos/aos.js"></script>
+    <script src="assets/plugins/aos/aos.js"></script>
 
-<script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

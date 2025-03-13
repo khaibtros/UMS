@@ -13,9 +13,7 @@
                                 <img src="assets/img/logo.png" alt="Not Found" onerror=this.src="../assets/img/logo.png">
                             </div>
                             <div class="footer-about-content">
-                                <p>Elevate your coding journey with CodeCoach - your go-to platform for mentorship.
-                                    Connect with experienced mentors and gain valuable insights to accelerate your
-                                    growth in coding.</p>
+                                <p>Advance your education at MKD University – a place where knowledge meets innovation. Learn from expert faculty, collaborate with peers, and unlock new opportunities for academic and professional growth.</p>
                                 <div class="social-icon">
                                     <ul>
                                         <li>
@@ -59,11 +57,11 @@
                                 </p>
                                 <p>
                                     <i class="fas fa-envelope"></i>
-                                    OurUMS@gmail.com
+                                    mkduni@gmail.com
                                 </p>
                                 <p>
                                     <i class="fas fa fa-globe"></i>
-                                    OurUMS.com
+                                    mkduni@gmail.com
                                 </p>
 
                             </div>
@@ -80,7 +78,7 @@
                     <div class="row">
                         <div class="col-12 text-center">
                             <div class="copyright-text">
-                                <p class="mb-0">&copy; 2025 CodeCoach. All rights reserved.</p>
+                                <p class="mb-0">&copy; 2025 MKD University. All rights reserved.</p>
                             </div>
                         </div>
                     </div>
