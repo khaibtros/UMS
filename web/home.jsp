@@ -44,7 +44,7 @@
                         <p>Discover the best Mentors with your desire skills set</p>
                     </div>
 
-                    <div class="search-box">
+<!--                    <div class="search-box">
                         <form action="search" method="post">
                             <div class="form-group search-info">
                                 <input name="searchTxt" type="text" class="form-control"
@@ -53,7 +53,7 @@
                             <button type="submit" class="btn btn-primary search-btn"><i><img
                                         src="assets/img/search-submit.png" alt></i> <span>Search</span></button>
                         </form>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>

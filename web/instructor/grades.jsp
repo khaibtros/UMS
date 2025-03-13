@@ -45,7 +45,7 @@
                         <div class="row">
 
                             <!--Admin sidebar start-->
-                            <%--<%@include file="adminsidebar.jsp" %>--%>
+                            <%@include file="instructorsidebar.jsp" %>
                             <!--Admin sidebar end-->
 
                             <div class="col-md-7 col-lg-8 col-xl-9">
@@ -87,37 +87,27 @@
                                                                 <%-- Hidden row for the edit form start--%>
                                                                 <tr class="edit-row" style="display: none;">
                                                                     <td colspan="4">
-                                                                        <form action="editannouncement" method="POST">
-                                                                            <input type="hidden" name="announcementId" value="${announcement.announcementID}">
+                                                                        <form action="editgrade" method="POST">
+                                                                            <input type="hidden" name="gradeId" value="${grade.gradeID}"> 
 
-                                                                             AdminID 
                                                                             <div class="form-group">
-                                                                                <label>AdminID:</label>
-                                                                                <select class="form-control" name="adminId">
-                                                                                    <option value="1" ${announcement.adminID == 1 ? "selected" : ""}>1</option>
-                                                                                    <option value="2" ${announcement.adminID == 2 ? "selected" : ""}>2</option>
-                                                                                    <option value="3" ${announcement.adminID == 3 ? "selected" : ""}>3</option>
-                                                                                </select>
+                                                                                <label>Assignment</label>
+                                                                                <input type="number" class="form-control" name="assignment" id="assignment" value="${grade.assignment}" step="any" required oninput="calculateTotal()">
                                                                             </div>
 
-                                                                             Title 
                                                                             <div class="form-group">
-                                                                                <label>Title:</label>
-                                                                                <input type="text" class="form-control" name="title" value="${announcement.title}" required>
+                                                                                <label>Midterm</label>
+                                                                                <input type="number" class="form-control" name="midterm" id="midterm" value="${grade.midterm}" step="any" required oninput="calculateTotal()">
                                                                             </div>
 
-                                                                             Content 
                                                                             <div class="form-group">
-                                                                                <label>Content:</label>
-                                                                                <textarea class="form-control" name="content" rows="5" required>${announcement.content}</textarea>
+                                                                                <label>Final</label>
+                                                                                <input type="number" class="form-control" name="finalExam" id="finalExam" value="${grade.finalExam}" step="any" required oninput="calculateTotal()">
                                                                             </div>
 
-                                                                             DatePosted 
                                                                             <div class="form-group">
-                                                                                <label>Date Posted:</label>
-                                                                                <input type="date" class="form-control" name="datePosted" 
-                                                                                       value="${announcement.datePosted}">
-                                                                            </div>
+                                                                                <input type="hidden" class="form-control" name="total" id="total" value="${grade.total}" step="any">
+                                                                            </div
 
                                                                             <input type="hidden" name="action" value="edit">
                                                                             <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -191,6 +181,20 @@
                                                                                     // Hide the edit form
                                                                                     editRow.style.display = 'none';
                                                                                     button.innerText = 'Edit';
+                                                                                }
+                                                                            }
+
+                                                                            function calculateTotal() {
+                                                                                let assignment = parseFloat(document.getElementById("assignment").value) || 0;
+                                                                                let midterm = parseFloat(document.getElementById("midterm").value) || 0;
+                                                                                let finalExam = parseFloat(document.getElementById("finalExam").value) || 0;
+
+                                                                                if (assignment !== "" && midterm !== "" && finalExam !== "") {
+                                                                                    let total = (parseFloat(assignment) * 0.3) + (parseFloat(midterm) * 0.3) + (parseFloat(finalExam) * 0.4);
+                                                                                    document.getElementById("total").value = total.toFixed(2);
+                                                                                } else {
+                                                                                    // If any field is empty, clear the total field
+                                                                                    document.getElementById("total").value = "";
                                                                                 }
                                                                             }
         </script>

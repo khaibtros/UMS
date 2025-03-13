@@ -88,6 +88,10 @@
         <servlet-name>ListGradesServlet</servlet-name>
         <servlet-class>Controllers.Instructor.ListGradesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditGradesServlet</servlet-name>
+        <servlet-class>Controllers.Instructor.EditGradesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -175,6 +179,10 @@
     <servlet-mapping>
         <servlet-name>ListGradesServlet</servlet-name>
         <url-pattern>/instructor/grades</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditGradesServlet</servlet-name>
+        <url-pattern>/instructor/editgrade</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

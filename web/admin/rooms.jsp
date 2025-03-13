@@ -103,7 +103,7 @@
 
                 <!--not admin start-->
                 <c:if test="${users.roleId != 1 || empty users}">
-                    <%@include file="accessdenied.jsp" %>
+                    <%@include file="../accessdenied.jsp" %>
                 </c:if>
 
                 <%@include file="../footer.jsp" %>
