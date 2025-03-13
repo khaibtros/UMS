@@ -44,16 +44,16 @@
                         <p>Discover the best Mentors with your desire skills set</p>
                     </div>
 
-<!--                    <div class="search-box">
-                        <form action="search" method="post">
-                            <div class="form-group search-info">
-                                <input name="searchTxt" type="text" class="form-control"
-                                       placeholder="Search Skills, Categories, Mentor's name, etc">
-                            </div>
-                            <button type="submit" class="btn btn-primary search-btn"><i><img
-                                        src="assets/img/search-submit.png" alt></i> <span>Search</span></button>
-                        </form>
-                    </div>-->
+                    <!--                    <div class="search-box">
+                                            <form action="search" method="post">
+                                                <div class="form-group search-info">
+                                                    <input name="searchTxt" type="text" class="form-control"
+                                                           placeholder="Search Skills, Categories, Mentor's name, etc">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary search-btn"><i><img
+                                                            src="assets/img/search-submit.png" alt></i> <span>Search</span></button>
+                                            </form>
+                                        </div>-->
 
                 </div>
             </div>
@@ -114,163 +114,52 @@
                 </div>
             </div>
         </section>
-        <section class="section popular-courses">
-            <div class="container">
-                <div class="section-header text-center aos" data-aos="fade-up">
 
-                    <h2>Popular Mentors</h2>
-                    <p class="sub-title">Do you want to move on next step? Choose your most popular leaning mentors, it
-                        will help you to achieve your professional goals.</p>
-                </div>
-
-                <!-- carousel of popular mentors -->
-
-                <div class="owl-carousel mentoring-course owl-theme">
-                    <c:forEach items="${mentorInfoList}" var="mInfo">
-                        <div class="course-box aos" data-aos="fade-up">
-                            <div class="product">
-                                <div class="product-img">
-                                    <a href="viewmentorprofile?mentorId=${mInfo[0]}">
-                                        <img class="img-fluid" alt src="assets/images/users/${mInfo[1]}.png" width="600"
-                                             height="300">
-                                    </a>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title"><a href="profile.html">${mInfo[6]} ${mInfo[7]}</a></h3>
-                                    <div class="author-info">
-                                        <div class="author-name">
-                                            <fmt:formatNumber value="${mInfo[3]}" type="number" var="formattedAmount" />
-                                            ${formattedAmount} VND/Hour
-                                        </div>
-
-                                    </div>
-
-                                    <div class="author-country">
-                                        <p class="mb-0"><i class="fas fa-map-marker-alt"></i> ${mInfo[12]}, ${mInfo[15]}, ${mInfo[16]}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </c:forEach>
-
-
-                </div>
-            </div>
-
-            <!-- end of carousel of popular mentors -->
-        </section>
-
-
-        <section class="section path-section">
-            <div class="section-header text-center aos" data-aos="fade-up">
-                <div class="container">
-                    <span>Choose the</span>
-                    <h2>Skills</h2>
-                    <p class="sub-title"></p>
-                </div>
-            </div>
-            <div class="learning-path-col">
-                <div class="container">
-
-                    <div id="skillslist" class="row">
-
-                        <!-- categories/subcategories/skills -->
-                        <c:forEach items="${skillList}" var="s">
-                            <div class="countskills col-12 col-md-4 col-lg-3">
-                                <div class="large-col aos" data-aos="fade-up">
-                                    <a href="search?searchTxt=${s.skillName}" class="large-col-image">
-                                        <div class="image-col-merge">
-                                            <img src="assets/images/skills/${s.skillId}.png" alt>
-                                            <div class="text-col">
-                                                <h5>${s.skillName}</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </c:forEach>
-                        <!-- end of categories/subcategories/skills -->
-
+    <!-- Pre footer -->
+    <section class="section statistics-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="statistics-list text-center aos" data-aos="fade-up">
+                        <span>500+</span>
+                        <h3>Happy Clients</h3>
                     </div>
-                    <!--this button will load more skills-->
-                    <div class="view-all text-center aos" data-aos="fade-up">
-                        <button onclick="loadMore()" class="btn btn-primary">Load more</button>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="statistics-list text-center aos" data-aos="fade-up">
+                        <span>120+</span>
+                        <h3>Online Appointments</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="statistics-list text-center aos" data-aos="fade-up">
+                        <span>100%</span>
+                        <h3>Job Satisfaction</h3>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <!-- end of Pre footer -->
+
+    <!--Content end-->
+
+    <!--Footer start-->
+    <%@include file="footer.jsp" %>
+    <!-- Footer end -->
+
+</div>
 
 
-        <script>
-<!--        ajax use to load more skills-->
-            function loadMore() {
-//            get the already-have skills in the current dom
-                var amount = document.getElementsByClassName("countskills").length;
-                $.ajax({
-                    //call to loadskills controller
-                    url: "/codecoach/loadskills",
-                    type: 'get',
-                    //push the data to the load skill controller
-                    data: {
-                        exist: amount
-                    },
-                    //if success binding to dom
-                    success: function (data) {
-                        var skillslist = document.getElementById("skillslist");
-                        skillslist.innerHTML += data;
-                    },
-                    error: function (xhr) {
-                        //Do Something to handle error
-                    }
-                });
-            }
-        </script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
 
-        <!-- Pre footer -->
-        <section class="section statistics-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <div class="statistics-list text-center aos" data-aos="fade-up">
-                            <span>500+</span>
-                            <h3>Happy Clients</h3>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="statistics-list text-center aos" data-aos="fade-up">
-                            <span>120+</span>
-                            <h3>Online Appointments</h3>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="statistics-list text-center aos" data-aos="fade-up">
-                            <span>100%</span>
-                            <h3>Job Satisfaction</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end of Pre footer -->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
-        <!--Content end-->
+<script src="assets/js/owl.carousel.min.js"></script>
 
-        <!--Footer start-->
-        <%@include file="footer.jsp" %>
-        <!-- Footer end -->
+<script src="assets/plugins/aos/aos.js"></script>
 
-    </div>
-
-
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="assets/js/owl.carousel.min.js"></script>
-
-    <script src="assets/plugins/aos/aos.js"></script>
-
-    <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>

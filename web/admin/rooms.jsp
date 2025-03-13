@@ -31,9 +31,10 @@
         <div class="main-wrapper">
 
             <!--Admin user start-->
-            <c:if test="${users.roleId == 1}">
-                <%@include file="../header.jsp" %>
 
+            <%@include file="../header.jsp" %>
+
+            <c:if test="${users.roleId == 1}">
                 <div class="breadcrumb-bar">
                     <div class="container-fluid">
                         <div class="row align-items-center">
@@ -79,15 +80,15 @@
                                                 </thead>
 
                                                 <tbody>
-                                                    <c:forEach var="roomItem" items="${listRoom}">
-                                                        <tr>
-                                                            <td>${roomItem.roomID}</td>
-                                                            <td>${roomItem.name}</td>
-                                                            <td>${roomItem.type}</td>
-                                                            <td>${roomItem.capacity}</td>
-                                                            <td>${roomItem.status}</td>
-                                                        </tr>
-                                                    </c:forEach>
+                                                <c:forEach var="roomItem" items="${listRoom}">
+                                                    <tr>
+                                                        <td>${roomItem.roomID}</td>
+                                                        <td>${roomItem.name}</td>
+                                                        <td>${roomItem.type}</td>
+                                                        <td>${roomItem.capacity}</td>
+                                                        <td>${roomItem.status}</td>
+                                                    </tr>
+                                                </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -98,24 +99,24 @@
                             </div>
                         </div>
                     </div>
-                </c:if>
-                <!--Admin user end-->
+            </c:if>
+            <!--Admin user end-->
 
-                <!--not admin start-->
-                <c:if test="${users.roleId != 1 || empty users}">
-                    <%@include file="../accessdenied.jsp" %>
-                </c:if>
+            <!--not admin start-->
+            <c:if test="${users.roleId != 1 || empty users}">
+                <%@include file="../accessdenied.jsp" %>
+            </c:if>
 
-                <%@include file="../footer.jsp" %>
-            </div>
+            <%@include file="../footer.jsp" %>
+        </div>
 
-            <script src="../assets/js/jquery-3.6.0.min.js"></script>
-            <script src="../assets/js/bootstrap.bundle.min.js"></script>
-            <script src="../assets/js/feather.min.js"></script>
-            <script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-            <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-            <script src="../assets/plugins/datatables/datatables.min.js"></script>
-            <script src="../assets/js/script.js"></script>
+        <script src="../assets/js/jquery-3.6.0.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/feather.min.js"></script>
+        <script src="../assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../assets/plugins/datatables/datatables.min.js"></script>
+        <script src="../assets/js/script.js"></script>
 
     </body>
 </html>

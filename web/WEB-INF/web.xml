@@ -92,6 +92,10 @@
         <servlet-name>EditGradesServlet</servlet-name>
         <servlet-class>Controllers.Instructor.EditGradesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>Controll.HomeController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -183,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>EditGradesServlet</servlet-name>
         <url-pattern>/instructor/editgrade</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

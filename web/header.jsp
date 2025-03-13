@@ -15,13 +15,13 @@
                                 <span></span>
                             </span>
                         </a>
-                        <a href="${pageContext.request.contextPath}/home" class="navbar-brand logo">
+                        <a href="${pageContext.request.contextPath}/home.jsp" class="navbar-brand logo">
                             <img src="assets/img/logo.png" class="img-fluid" alt="Not Found" onerror=this.src="../assets/img/logo.png">
                         </a>
                     </div>
                     <div class="main-menu-wrapper">
                         <div class="menu-header">
-                            <a href="${pageContext.request.contextPath}/home" class="menu-logo">
+                            <a href="${pageContext.request.contextPath}/home.jsp" class="menu-logo">
                                 <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
                             </a>
                             <a id="menu_close" class="menu-close" href="javascript:void(0);">
@@ -30,7 +30,7 @@
                         </div>
                         <ul class="main-nav">
                             <li class="has-submenu">
-                                <a href="${pageContext.request.contextPath}/home">Home <i class="fas"></i></a>
+                                <a href="${pageContext.request.contextPath}/home.jsp">Home <i class="fas"></i></a>
                             </li>
 
                             <!--                            <li class="has-submenu">
@@ -50,17 +50,17 @@
                             <!--Admin, student, instructor dashboard button-->
                             <c:if test="${users.roleId == 1}">
                                 <li>
-                                    <a href="admindashboard" target="">Admin Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/admin/admindashboard" target="">Admin Dashboard</a>
                                 </li>
                             </c:if>
                             <c:if test="${users.roleId == 2}">
                                 <li>
-                                    <a href="studentdashboard" target="">Student Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/student/studentdashboard" target="">Student Dashboard</a>
                                 </li>
                             </c:if>
                             <c:if test="${users.roleId == 3}">
                                 <li>
-                                    <a href="instructordashboard" target="">Instructor Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/instructor/instructordashboard" target="">Instructor Dashboard</a>
                                 </li>
                             </c:if>
                             <!--end of  button-->
