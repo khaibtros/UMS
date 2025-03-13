@@ -109,7 +109,7 @@
                     <div class="col-12 col-md-4">
                         <div class="statistics-list text-center aos" data-aos="fade-up">
                             <span>500+</span>
-                            <h3>Happy Clients</h3>
+                            <h3>Happy Students</h3>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">

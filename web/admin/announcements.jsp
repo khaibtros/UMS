@@ -110,7 +110,7 @@
                                                     <thead>
                                                         <tr>
                                                             <th style="width: 10px;">Title</th>
-                                                            <th style="width: 250px;">Content</th>
+                                                            <th style="width: 250px;">Full Content</th>
                                                             <th style="width: 20px;">Date Posted</th>
                                                             <th style="width: 100px;">ACTION</th>
                                                         </tr>
