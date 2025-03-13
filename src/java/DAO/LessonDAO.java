@@ -205,7 +205,7 @@ public class LessonDAO {
         public List<Lesson> getLessonsByInstructorId(int instructorId) {
                 List<Lesson> lessons = new ArrayList<>();
                 String sql = "SELECT LessonID, CourseID, ClassID, InstructorID, RoomID, Date, DayOfWeek, StartTime, EndTime, Content "
-                        + "FROM Lesson WHERE InstructorID = ? ORDER BY Date";
+                        + "FROM Lesson WHERE InstructorID = ? ORDER BY Date DESC";
 
                 try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
@@ -240,7 +240,7 @@ public class LessonDAO {
                         + "FROM Lesson l "
                         + "JOIN StudentClass sc ON l.ClassID = sc.ClassID "
                         + "WHERE sc.StudentID = ? "
-                        + "ORDER BY l.Date";
+                        + "ORDER BY l.Date DESC";
 
                 try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
 
