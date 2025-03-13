@@ -78,6 +78,41 @@ public class GradeDAO {
                 }
                 return lstGrade;
         }
+        
+        public List<Grade> getAllGradesByStudentId(int studentId) {
+                List<Grade> lstGrade = new ArrayList<>();
+                DBContext db = new DBContext();
+                try {
+                        conn = db.getConnection();
+                        String sql = "SELECT g.GradeID, g.EnrollmentID, g.Assignment, g.Midterm, g.Final, g.Total, "
+                                + "e.StudentID, c.Name "
+                                + "FROM Grade g "
+                                + "JOIN Enrollment e ON g.EnrollmentID = e.EnrollmentID "
+                                + "JOIN Course c ON c.CourseID = e.CourseID "
+                                + "WHERE e.StudentID = ?";
+
+                        ps = conn.prepareStatement(sql);
+                        ps.setInt(1, studentId);
+                        rs = ps.executeQuery();
+                        while (rs.next()) {
+                                int gradeID = rs.getInt("GradeID");
+                                int enrollmentID = rs.getInt("EnrollmentID");
+                                double assignment = rs.getDouble("Assignment");
+                                double midterm = rs.getDouble("Midterm");
+                                double finalExam = rs.getDouble("Final");
+                                double total = rs.getDouble("Total");
+                                int studentID = rs.getInt("StudentID");
+                                String courseName = rs.getString("Name");
+
+                                Grade grade = new Grade(gradeID, enrollmentID, studentID, courseName, assignment, midterm, finalExam, total);
+                                lstGrade.add(grade);
+                        }
+                        conn.close();
+                } catch (Exception ex) {
+                        Logger.getLogger(GradeDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                return lstGrade;
+        }
 
         public void deleteGrade(String grID) {
                 DBContext db = new DBContext();

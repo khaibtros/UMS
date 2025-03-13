@@ -76,7 +76,7 @@
                                                     <tbody>
                                                         <c:forEach items="${listLesson}" var="lesson">
                                                             <tr>
-                                                                <td style="width: 10px; white-space: pre-wrap;"><a href="attendances?lessonId=${lesson.lessonID}" style="color: red;">${lesson.lessonID} (edit attendance)</a></td>
+                                                                <td style="width: 10px; white-space: pre-wrap;"><a href="attendances?lessonId=${lesson.lessonID}" style="color: red;">${lesson.lessonID} (view attendance)</a></td>
                                                                 <td style="width: 10px;white-space: pre-wrap;">${lesson.courseID}</td>
                                                                 <td style="width: 10px; white-space: pre-wrap;">${lesson.classID}</td>
                                                                 <td style="width: 10px; white-space: pre-wrap;">${lesson.roomID}</td>

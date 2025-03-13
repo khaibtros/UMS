@@ -124,6 +124,14 @@
         <servlet-name>ListAnnouncementsStudentServlet</servlet-name>
         <servlet-class>Controllers.Student.ListAnnouncementsStudentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListGradesStudentServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListGradesStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListEnrollmentsStudentServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListEnrollmentsStudentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -247,6 +255,14 @@
     <servlet-mapping>
         <servlet-name>ListAnnouncementsStudentServlet</servlet-name>
         <url-pattern>/student/announcements</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListGradesStudentServlet</servlet-name>
+        <url-pattern>/student/grades</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListEnrollmentsStudentServlet</servlet-name>
+        <url-pattern>/student/enrollments</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
