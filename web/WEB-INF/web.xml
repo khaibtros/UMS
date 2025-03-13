@@ -104,6 +104,14 @@
         <servlet-name>ListLessonsInstructorServlet</servlet-name>
         <servlet-class>Controllers.Instructor.ListLessonsInstructorServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListAttendancesInstructorServlet</servlet-name>
+        <servlet-class>Controllers.Instructor.ListAttendancesInstructorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditAttendancesInstructorServlet</servlet-name>
+        <servlet-class>Controllers.Instructor.EditAttendancesInstructorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -207,6 +215,14 @@
     <servlet-mapping>
         <servlet-name>ListLessonsInstructorServlet</servlet-name>
         <url-pattern>/instructor/lessons</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListAttendancesInstructorServlet</servlet-name>
+        <url-pattern>/instructor/attendances</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditAttendancesInstructorServlet</servlet-name>
+        <url-pattern>/instructor/editattendance</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

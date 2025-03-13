@@ -34,4 +34,17 @@ public class AttendanceDAO {
         }
         return attendanceList;
     }
+    
+    public void updateAttendanceStatus(int attendanceID, String status) {
+        String sql = "UPDATE Attendance SET Status = ? WHERE AttendanceID = ?";
+        try (Connection conn = new DBContext().getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, status);
+            ps.setInt(2, attendanceID);
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

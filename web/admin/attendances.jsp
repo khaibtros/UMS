@@ -92,7 +92,7 @@
                                                             <% int counter = 1;%>
                                                             <c:forEach items="${listAttendance}" var="attendance">
                                                                 <tr>
-                                                                    <td style="width: 10px; white-space: pre-wrap;">${attendance.attendanceID}</td>
+                                                                    <td style="width: 100px; white-space: pre-wrap;">${attendance.attendanceID}</td>
                                                                     <td style="width: 100px; white-space: pre-wrap;">${attendance.studentID}</td>
                                                                     <td style="width: 100px; white-space: pre-wrap;">${attendance.lessonID}</td>
                                                                     <td style="width: 100px; white-space: pre-wrap;">${attendance.status}</td>
