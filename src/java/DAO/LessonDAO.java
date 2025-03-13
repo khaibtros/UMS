@@ -233,4 +233,39 @@ public class LessonDAO {
 
                 return lessons;
         }
+
+        public List<Lesson> getLessonsByStudentId(int studentId) {
+                List<Lesson> lessons = new ArrayList<>();
+                String sql = "SELECT l.LessonID, l.CourseID, l.ClassID, l.InstructorID, l.RoomID, l.Date, l.DayOfWeek, l.StartTime, l.EndTime, l.Content "
+                        + "FROM Lesson l "
+                        + "JOIN StudentClass sc ON l.ClassID = sc.ClassID "
+                        + "WHERE sc.StudentID = ? "
+                        + "ORDER BY l.Date";
+
+                try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+
+                        ps.setInt(1, studentId);
+
+                        try (ResultSet rs = ps.executeQuery()) {
+                                while (rs.next()) {
+                                        lessons.add(new Lesson(
+                                                rs.getInt("LessonID"),
+                                                rs.getInt("CourseID"),
+                                                rs.getInt("ClassID"),
+                                                rs.getInt("InstructorID"),
+                                                rs.getInt("RoomID"),
+                                                rs.getDate("Date"),
+                                                rs.getString("DayOfWeek"),
+                                                rs.getTime("StartTime"),
+                                                rs.getTime("EndTime"),
+                                                rs.getString("Content")
+                                        ));
+                                }
+                        }
+                } catch (Exception ex) {
+                        Logger.getLogger(LessonDAO.class.getName()).log(Level.SEVERE, "Error fetching lessons by student ID", ex);
+                }
+
+                return lessons;
+        }
 }

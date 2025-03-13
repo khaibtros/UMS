@@ -112,6 +112,18 @@
         <servlet-name>EditAttendancesInstructorServlet</servlet-name>
         <servlet-class>Controllers.Instructor.EditAttendancesInstructorServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListLessonsStudentServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListLessonsStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListAttendancesStudentServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListAttendancesStudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListAnnouncementsStudentServlet</servlet-name>
+        <servlet-class>Controllers.Student.ListAnnouncementsStudentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>checkEmailExisted</servlet-name>
         <url-pattern>/checkEmailExisted</url-pattern>
@@ -223,6 +235,18 @@
     <servlet-mapping>
         <servlet-name>EditAttendancesInstructorServlet</servlet-name>
         <url-pattern>/instructor/editattendance</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListLessonsStudentServlet</servlet-name>
+        <url-pattern>/student/lessons</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListAttendancesStudentServlet</servlet-name>
+        <url-pattern>/student/attendances</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListAnnouncementsStudentServlet</servlet-name>
+        <url-pattern>/student/announcements</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
