@@ -12,10 +12,10 @@
         <div class="profile-sidebar">
             <div class="custom-sidebar-nav">
                 <ul>
-                    <li><a href="admindashboard"><i class="fas fa-chart-pie"></i>Instructor Dashboard
+<!--                    <li><a href="admindashboard"><i class="fas fa-chart-pie"></i>Instructor Dashboard
                             <span><i class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="AdminNotificationController"><i class="fas fa-bell"></i>Instructor Notification
-                            <span><i class="fas fa-chevron-right"></i></span></a></li>
+                            <span><i class="fas fa-chevron-right"></i></span></a></li>-->
                     <li><a href="grades"><i class="fas fa-list-alt"></i>Grades<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="courses"><i class="fas fa-list-alt"></i>Courses<span><i 

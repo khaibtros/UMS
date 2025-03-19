@@ -50,17 +50,17 @@
                             <!--Admin, student, instructor dashboard button-->
                             <c:if test="${users.roleId == 1}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/admin/admindashboard" target="">Admin Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/admin/students" target="">Admin Dashboard</a>
                                 </li>
                             </c:if>
                             <c:if test="${users.roleId == 2}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/student/studentdashboard" target="">Student Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/student/grades" target="">Student Dashboard</a>
                                 </li>
                             </c:if>
                             <c:if test="${users.roleId == 3}">
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/instructor/instructordashboard" target="">Instructor Dashboard</a>
+                                    <a href="${pageContext.request.contextPath}/instructor/grades" target="">Instructor Dashboard</a>
                                 </li>
                             </c:if>
                             <!--end of  button-->
