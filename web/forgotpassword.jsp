@@ -1,8 +1,3 @@
-<%-- 
-    Document   : forgotpassword
-    Created on : May 31, 2023, 5:14:20 PM
-    Author     : Duy Thai
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

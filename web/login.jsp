@@ -1,15 +1,10 @@
-<%-- 
-    Document   : login
-    Created on : Jun 7, 2023, 10:05:53 AM
-    Author     : Duy Thai
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>CodeCoach</title>
+        <title>MKD</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">

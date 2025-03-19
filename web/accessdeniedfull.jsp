@@ -1,8 +1,3 @@
-<%-- 
-    Document   : accessdeniedfull
-    Created on : Jun 29, 2023, 3:56:56 PM
-    Author     : Duy Thai
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

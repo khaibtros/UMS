@@ -33,20 +33,6 @@
                                 <a href="${pageContext.request.contextPath}/home.jsp">Home <i class="fas"></i></a>
                             </li>
 
-                            <!--                            <li class="has-submenu">
-                                                            <a href='search?searchTxt='>Search mentor <i class="fas"></i></a>
-                            
-                                                        </li>
-                                                        <li class="has-submenu">
-                                                            <a href="listchat">Chat <i class="fas "></i></a>
-                                                        </li>
-                                                        <li class="has-submenu">
-                                                            <a href="contactus">Contact Us <i class="fas "></i></a>
-                                                        </li>
-                                                        <li class="has-submenu">
-                                                            <a href="faq">FAQ <i class="fas "></i></a>
-                                                        </li>-->
-
                             <!--Admin, student, instructor dashboard button-->
                             <c:if test="${users.roleId == 1}">
                                 <li>

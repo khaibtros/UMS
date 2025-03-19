@@ -1,8 +1,3 @@
-<%-- 
-    Document   : 404error
-    Created on : Jun 4, 2023, 11:46:20 PM
-    Author     : Duy Thai
---%>
 
 <!DOCTYPE html>
 <html lang="en">

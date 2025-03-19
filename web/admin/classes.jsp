@@ -1,8 +1,3 @@
-<%-- 
-    Document   : listclasses
-    Created on : Mar 9, 2025, 1:52:15 PM
-    Author     : ManhTD
---%>
 
 <%@page import="Models.Class"%>
 <%@page import="java.util.List"%>

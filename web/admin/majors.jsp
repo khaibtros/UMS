@@ -1,8 +1,3 @@
-<%-- 
-    Document   : listmajor
-    Created on : Mar 11, 2025
-    Author     : ManhTD
---%>
 
 <%@page import="Models.Major"%>
 <%@page import="java.util.List"%>

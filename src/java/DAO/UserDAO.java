@@ -7,7 +7,7 @@ package DAO;
 import Models.User;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import model.Roles;
+import Models.Role;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +16,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Duy Thai
- */
 public class UserDAO extends DBContext {
 
         Connection conn = null;

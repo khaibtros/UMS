@@ -1,8 +1,3 @@
-<%-- 
-    Document   : Change Password
-    Created on : 25-May-2023, 15:48:16
-    Author     : ADMIN
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <head>

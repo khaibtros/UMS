@@ -1,8 +1,3 @@
-<%-- 
-    Document   : listrooms
-    Created on : Mar 9, 2025, 2:30:15 PM
-    Author     : ManhTD
---%>
 
 <%@page import="Models.Room"%>
 <%@page import="java.util.List"%>

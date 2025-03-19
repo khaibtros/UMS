@@ -4,7 +4,6 @@ package DAO;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,10 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import Models.Role;
 
-/**
- *
- * @author Duy Thai
- */
 public class RoleDAO {
     Connection conn = null;
     PreparedStatement ps = null;

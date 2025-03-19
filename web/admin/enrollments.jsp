@@ -1,8 +1,3 @@
-<%-- 
-    Document   : enrollment
-    Created on : Jun 9, 2023, 4:08:36 PM
-    Author     : Khai
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

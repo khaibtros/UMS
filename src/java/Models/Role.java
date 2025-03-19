@@ -4,11 +4,6 @@ package Models;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-
-/**
- *
- * @author Duy Thai
- */
 public class Role {
     private int roleId;
     private String roleName;

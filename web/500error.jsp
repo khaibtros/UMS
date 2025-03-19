@@ -1,8 +1,3 @@
-<%-- 
-    Document   : 500 Error
-    Created on : 25-May-2023, 15:46:59
-    Author     : ADMIN
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>

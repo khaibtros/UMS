@@ -4,10 +4,6 @@
  */
 package Models;
 
-/**
- *
- * @author Duy Thai
- */
 public class User {
         private int userId;
         private String email;

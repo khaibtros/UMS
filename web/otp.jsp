@@ -1,8 +1,3 @@
-<%-- 
-    Document   : otp
-    Created on : Jun 1, 2023, 3:58:15 PM
-    Author     : Duy Thai
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

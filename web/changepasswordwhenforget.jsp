@@ -1,8 +1,3 @@
-<%-- 
-    Document   : changepasswordwhenforget
-    Created on : Jun 4, 2023, 11:08:16 PM
-    Author     : Duy Thai
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

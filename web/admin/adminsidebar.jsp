@@ -1,8 +1,3 @@
-<%-- 
-    Document   : adminsidebar
-    Created on : Jun 9, 2023, 4:22:45 PM
-    Author     : Duy Thai
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,10 +7,10 @@
         <div class="profile-sidebar">
             <div class="custom-sidebar-nav">
                 <ul>
-<!--                    <li><a href="admindashboard"><i class="fas fa-chart-pie"></i>Admin Dashboard
-                            <span><i class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="AdminNotificationController"><i class="fas fa-bell"></i>Admin Notification
-                            <span><i class="fas fa-chevron-right"></i></span></a></li>-->
+                    <!--                    <li><a href="admindashboard"><i class="fas fa-chart-pie"></i>Admin Dashboard
+                                                <span><i class="fas fa-chevron-right"></i></span></a></li>
+                                        <li><a href="AdminNotificationController"><i class="fas fa-bell"></i>Admin Notification
+                                                <span><i class="fas fa-chevron-right"></i></span></a></li>-->
                     <li><a href="students"><i class="fas fa-list-alt"></i>Students<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="instructors"><i class="fas fa-list-alt"></i>Instructors<span><i 
@@ -24,8 +19,7 @@
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="courses"><i class="fas fa-list-alt"></i>Courses<span><i 
                                     class="fas fa-chevron-right"></i></span></a></li>               
-                    <!--                    <li><a href="listbooking"><i class="fas fa-list-alt"></i>List Booking <span><i
-                                                        class="fas fa-chevron-right"></i></span></a></li>-->
+
                     <li><a href="classes"><i class="fas fa-list-alt"></i>Classes<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="enrollments.jsp"><i class="fas fa-list-alt"></i>Enrollments<span><i
@@ -34,22 +28,12 @@
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="attendances.jsp"><i class="fas fa-list-alt"></i>Attendances<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-<!--                    <li><a href="listcategory"><i class="fas fa-list-alt"></i>List Categories <span><i
-                                    class="fas fa-chevron-right"></i></span></a></li>-->
+
                     <li><a href="rooms"><i class="fas fa-list-alt"></i>Rooms<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
                     <li><a href="announcements"><i class="fas fa-list-alt"></i>Announcements<span><i
                                     class="fas fa-chevron-right"></i></span></a></li>
-<!--                    <li><a href="viewtransaction"><i class="fas fa-money-bill-alt"></i>View Transactions <span><i
-                                    class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="editfaq"><i class="fas fa-question-circle"></i>FAQ <span><i
-                                    class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="editppat"><i class="fas fa-book-reader"></i>Privacy policy & Terms <span><i
-                                    class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="profile.html"><i class="fas fa-user-cog"></i>Admin Profile <span><i
-                                    class="fas fa-chevron-right"></i></span></a></li>
-                    <li><a href="viewandeditsettings"><i class="fas fa-cog"></i>CodeCoach Settings <span><i
-                                    class="fas fa-chevron-right"></i></span></a></li>-->
+
                 </ul>
             </div>
         </div>
